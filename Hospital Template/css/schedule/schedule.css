@@ -1,0 +1,22 @@
+.contactH{
+    color: #222222;
+    font-size: 44px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Schedule Starts */
+.doctorName{
+    font-family: 'Lato',sans-serif;
+    font-weight: 600;
+    color: #222222;
+    font-size: 36px;
+}
+.profile {
+    color: #6e868c;
+    text-decoration: none;
+}
+.profile:hover{
+    color: #6e868c;
+    text-decoration: none;
+}
+/* Schedule Ends */

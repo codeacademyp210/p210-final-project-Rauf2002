@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Contact</title>
+
+    <!-- Global CSS starts -->
+    <link rel="icon" href="./img/global/icon.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/global.css">
+    <script src="https://kit.fontawesome.com/55ffc5f93b.js"></script>
+    <!-- Fonts Start -->
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+    <!-- Fonts End -->
+    <!-- Global CSS ends -->
+
+    <!-- Page Level CSS Starts -->
+    <link rel="stylesheet" href="./css/contact/contact.css">
+    <!-- Page Level CSS Ends -->
+</head>
+
+<body>
+     <!-- Same Header Starts -->
+     <header>
+            <section class="headerSec py-4">
+                <div class="container">
+                    <div class="d-flex row">
+                        <div class="col-md-3 col-12 d-flex logoDiv">
+                            <div class="logoHolder">
+                                <a href="../Hospital Template/index.html">
+                                    <img src="./img/global/logo.png" alt=""></a>
+                            </div>
+                            <div class="d-flex ml-3">
+                                <a class="mr-3" href="#" style="color:#555555">AZ</a>
+                                <a href="#" style="color:#555555">EN</a>
+                            </div>
+                        </div>
+                        <div class="col-md-9 col-12 menuDiv">
+                            <ul class="navbar">
+                                <li>
+                                    <a href="./doctors.html">
+                                        DOCTORS
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="./departments.html">
+                                        DEPARTMENTS
+                                    </a>
+                                    <ul class="dropdown">
+                                        <li><a href="">XRAY</a></li>
+                                        <li><a href="">PEDIATRIC</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="./gallery.html">
+                                        GALLERY
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="./contact.html">
+                                        CONTACT
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+    
+                    </div>
+                </div>
+            </section>
+        </header>
+        <!-- Same Header Ends -->
+
+    <!-- Content Starts -->
+    <main>
+        <!-- Background Image Starts -->
+        <section style="background-image:url('./img/global/header.jpg')" class="p-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="contactH">Contact</h2>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Bakcground Image Ends -->
+
+        <!-- Map Starts -->
+        <section>
+            <div class="container">
+                <div class="row my-5">
+                    <div class="col-12">
+                        <div class="mapouter">
+                            <div class="gmap_canvas">
+                                <iframe width="1300" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=Davis&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                                    frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                                <a href="https://www.embedgooglemap.net/blog/best-wordpress-themes/">embedgooglemap.net</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Map Ends -->
+
+        <section class="mb-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5 col-12">
+                        <div class="row">
+                            <div class="col-12">
+                                <h2 class="touchH">
+                                    Get in touch
+                                </h2>
+                            </div>
+                            <div class="col-12">
+                                <p style="color:#555555;font-family:'Lato',sans-serif">This is Herman Brooks. Herman is
+                                    just like the rest of us. Everyday he has to make
+                                    all kinds of decisions like what to wear, whom to date and when to panic.
+                                </p>
+                            </div>
+                            <div class="col-12">
+                                <p style="color:#555555;font-family:'Lato',sans-serif">
+                                    Now these decisions should be easy but if you take a look inside Herman’s head,
+                                    you’ll see why he sometimes has trouble making up his mind. Sometimes they agree…
+                                    usually they don’t. But the struggle is going on inside all of us and it’s all
+                                    going on inside Herman’s head.</p>
+                            </div>
+                            <div class="col-12 mt-5 mb-2">
+                                <h4 class="infoH">Contact <strong>INFO</strong></h4>
+                            </div>
+                            <div class="col-12 contactDetails">
+                                <ul>
+                                    <li><i class="fas fa-envelope"></i> Hospital@Hospital.com</li>
+                                    <li><i class="fas fa-phone"></i> +333 444 55 66</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-7">
+                        <!-- User Message Starts -->
+                        <form action="#" onsubmit="return validateForm()" method="POST">
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="name">Full Name</label>
+                                    <input type="text" class="form-control" id="name" placeholder="Name" name="Name">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="email">Email address</label>
+                                    <input type="email" class="form-control" id="email" placeholder="Email" name="Email">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="phone">Phone number</label>
+                                    <input type="text" class="form-control" id="phone" placeholder="Phone" name="Phone">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="message">Message</label>
+                                    <textarea name="Message" id="message"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="submit">SUBMIT</button>
+                            </div>
+                        </form>
+                        <!-- User Message Ends -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Content Ends -->
+
+    <!-- Same Footer Starts -->
+    <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-12" style="margin-top:4rem;margin-bottom:4rem">
+                        <div class="row">
+                            <div class="col-12">
+                                <div>
+                                    <img src="./img/global/footerLogo.png" alt="Logo">
+                                </div>
+                            </div>
+                            <div class="col-12 mt-2">
+                                <p class="footerP">My kinda people, my kinda place. There's something special about this
+                                    place.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-12" style="margin-top:4rem;margin-bottom:4rem">
+                        <div class="row">
+                            <div class="col-12">
+                                <div>
+                                    <h2 class="footerH">Contact Details</h2>
+                                </div>
+                            </div>
+                            <div class="col-12 mt-2">
+                                <ul>
+                                    <li>
+                                        <i class="fas fa-map-marker-alt footerIcon"></i>
+                                        <p class="footerP">Park Drive, Varick Str New York,
+                                            NY 10012, USA</p>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-envelope footerIcon"></i>
+                                        <p class="footerP">Hospital@Hospital.com</p>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-phone footerIcon"></i>
+                                        <p class="footerP">+333 444 55 66</p>
+                                    </li>
+                                    <li>
+                                        <i class="far fa-clock footerIcon"></i>
+                                        <p class="footerP">Mon-Satday: 9am to 18pm</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-12" style="margin-top:4rem;margin-bottom:4rem">
+                        <div class="row">
+                            <div class="col-12">
+                                <div>
+                                    <h2 class="footerH">Latest Posts</h2>
+                                </div>
+                            </div>
+                            <div class="col-12 mt-2">
+                                <ul>
+                                    <li>
+                                        <i class="fas fa-list footerIcon"></i>
+                                        <p class="footerP">Together We Can Do So Much</p>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-list footerIcon"></i>
+                                        <p class="footerP">Together We Can Do So Much</p>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-list footerIcon"></i>
+                                        <p class="footerP">Together We Can Do So Much</p>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-list footerIcon"></i>
+                                        <p class="footerP">Together We Can Do So Much</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Same Footer Ends -->   
+</body>
+
+<!-- CKEditor Starts -->
+<script src="https://cdn.ckeditor.com/4.12.1/standard/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace('Message');
+</script>
+<!-- CKEditoor Ends -->
+
+<!-- Page Level JS Starts -->
+<script src="./js/contact/contact.js"></script>
+<!-- Page Level JS Ends -->
+</html>

@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+
+    <!-- Global CSS starts -->
+    <link rel="icon" href="./img/global/icon.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/global.css">
+    <script src="https://kit.fontawesome.com/55ffc5f93b.js"></script>
+    <!-- Fonts Start -->
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+    <!-- Fonts End -->
+    <!-- Global CSS ends -->
+
+    <!-- Page Level CSS Starts -->
+    <link rel="stylesheet" href="./css/index/index.css">
+    <!-- Page Level CSS Ends -->
+</head>
+
+<body>
+
+    <!-- Same Header Starts -->
+    <header>
+        <section class="headerSec py-4">
+            <div class="container">
+                <div class="d-flex row">
+                    <div class="col-md-3 col-12 d-flex logoDiv">
+                        <div class="logoHolder">
+                            <a href="../Hospital Template/index.html">
+                                <img src="./img/global/logo.png" alt=""></a>
+                        </div>
+                        <div class="d-flex ml-3">
+                            <a class="mr-3" href="#" style="color:#555555">AZ</a>
+                            <a href="#" style="color:#555555">EN</a>
+                        </div>
+                    </div>
+                    <div class="col-md-9 col-12 menuDiv">
+                        <ul class="navbar">
+                            <li>
+                                <a href="./doctors.html">
+                                    DOCTORS
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./departments.html">
+                                    DEPARTMENTS
+                                </a>
+                                <ul class="dropdown">
+                                    <li><a href="">XRAY</a></li>
+                                    <li><a href="">PEDIATRIC</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="./gallery.html">
+                                    GALLERY
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./contact.html">
+                                    CONTACT
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </header>
+    <!-- Same Header Ends -->
+
+    <!-- Content Starts -->
+    <main>
+        <section>
+            <div class="slider">
+                <div class="slider-container">
+                    <div class="slider-item active-slide">
+                        <img src="./img/index/slider1.jpg">
+                    </div>
+                    <div class="slider-item">
+                        <img src="./img/index/slider2.jpg">
+                    </div>
+                    <div class="slider-item">
+                        <img src="./img/index/slider3.jpg">
+                    </div>
+                </div>
+                <button class="slider-button slider-button-left"><i class="fas fa-angle-left"></i></button>
+                <button class="slider-button slider-button-right"><i class="fas fa-angle-right"></i></button>
+            </div>
+        </section>
+
+        <!-- Appointment Starts -->
+        <section style="background-color:#1565c0" class="appointmentSection">
+            <div class="container">
+                <div class="row pt-5 mb-4">
+                    <div class="col-12">
+                        <h3 class="appointmentH">BOOK APPOINTMENT</h3>
+                    </div>
+                </div>
+                <form action="" method="POST" onsubmit="return validateForm()">
+                    <div class="row flex-wrap pb-5">
+                        <div class="col-md-4 col-12">
+                            <div class="form-group">
+                                <label for="name">Patient Name</label>
+                                <input type="text" class="form-control" id="name" placeholder="Full Name">
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-12">
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="text" class="form-control" id="phone" placeholder="Phone Number">
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-12">
+                            <div class="form-group">
+                                <label for="department">Select Department</label>
+                                <select name="DepartmentId" class="form-control" id="department" >
+                                    <option value="1">Cardiology</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-12">
+                            <div class="form-group">
+                                <label for="doctor">Select Doctor</label>
+                                <select name="DoctorId" class="form-control" id="doctor">
+                                    <option value="1">Verona Didone</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-12">
+                            <div class="form-group">
+                                <label>Choose Date</label>
+                                <input type="date" name="Date" class="form-control" id="date">
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-12">
+                            <label style="color:#1565c0">Nothing</label>
+                            <button type="submit" class="appointmentSubmit form-control">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <!-- Appointment Ends -->
+        <section>
+            <div class="container">
+                <div class="row" style="margin-top:5rem;margin-bottom:3rem;">
+                    <div class="col-12">
+                        <h2 class="text-center best">BEST HOSPITAL IN TOWN</h2>
+                    </div>
+                    <div class="col-12">
+                        <h4 class="text-center bestDesc">When It Comes to Health Care</h4>
+                    </div>
+                </div>
+                <div class="row d-flex flex-wrap justify-content-between">
+                    <div class="col-md-4 col-12 wrapper my-4">
+                        <div class="row">
+                            <div class="col-12 text-center ">
+                                <i class="fas fa-gopuram wrapIcon"></i>
+                            </div>
+                            <div class="col-12 text-center mt-4 mb-3">
+                                <h4 class="wrapperTitle">Powerful Devices</h4>
+                            </div>
+                            <div class="col-12 text-center">
+                                <p style="font-size:16px;color:#555555">Lorem Ipsum is simply dummy text of the
+                                    printing and typesetting industry. Lorem Ipsum has been the industry's standard.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-12 wrapper my-4">
+                        <div class="row">
+                            <div class="col-12 text-center ">
+                                <i class="fas fa-syringe wrapIcon"></i>
+                            </div>
+                            <div class="col-12 text-center mt-4 mb-3">
+                                <h4 class="wrapperTitle">Hygiene and Careful</h4>
+                            </div>
+                            <div class="col-12 text-center">
+                                <p style="font-size:16px;color:#555555">Lorem Ipsum is simply dummy text of the
+                                    printing and typesetting industry. Lorem Ipsum has been the industry's standard.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-12 wrapper my-4">
+                        <div class="row">
+                            <div class="col-12 text-center ">
+                                <i class="fas fa-ambulance wrapIcon"></i>
+                            </div>
+                            <div class="col-12 text-center mt-4 mb-3">
+                                <h4 class="wrapperTitle">Fast as Lightning</h4>
+                            </div>
+                            <div class="col-12 text-center">
+                                <p style="font-size:16px;color:#555555">Lorem Ipsum is simply dummy text of the
+                                    printing and typesetting industry. Lorem Ipsum has been the industry's standard.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Doctors Start -->
+        <section>
+            <div class="container">
+                <div class="row" style="margin-top:5rem;margin-bottom:3rem;">
+                    <div class="col-12">
+                        <h2 class="text-center best">OUR DOCTORS</h2>
+                    </div>
+                    <div class="col-12">
+                        <h4 class="text-center bestDesc">Our doctors are specialized in their field and have more than
+                            10 years of experiences.</h4>
+                    </div>
+                </div>
+                <div class="row d-flex justify-content-between flex-wrap">
+                    <div class="col-md-3 col-12">
+                        <div class="single-team-member">
+                            <div class="img-holder">
+                                <img src="./img/index/doctor1.jpg" alt="Doctor">
+                                <div class="overlay-style">
+                                    <div class="box">
+                                        <div class="content">
+                                            <div class="top">
+                                                <h3>John Doe</h3>
+                                                <span>Dentist</span>
+                                            </div>
+                                            <span class="border"></span>
+                                            <div class="bottom">
+                                                <ul>
+                                                    <li><i class="fa fa-phone" aria-hidden="true"></i> +333 444 55 66</li>
+                                                    <li><i class="fa fa-envelope" aria-hidden="true"></i>
+                                                        Hospital@Hospitals.com</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-holder">
+                                    <h3>John Doe Sartre</h3>
+                                    <span>Dentist</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-12">
+                        <div class="single-team-member">
+                            <div class="img-holder">
+                                <img src="./img/index/doctor4.jpg" alt="Doctor">
+                                <div class="overlay-style">
+                                    <div class="box">
+                                        <div class="content">
+                                            <div class="top">
+                                                <h3>Adam Smith</h3>
+                                                <span>Surgeon</span>
+                                            </div>
+                                            <span class="border"></span>
+                                            <div class="bottom">
+                                                <ul>
+                                                    <li><i class="fa fa-phone" aria-hidden="true"></i> +333 444 55 66</li>
+                                                    <li><i class="fa fa-envelope" aria-hidden="true"></i>
+                                                        Hospital@Hospitals.com</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-holder">
+                                    <h3>Adam Smith</h3>
+                                    <span>Surgeon</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-12">
+                        <div class="single-team-member">
+                            <div class="img-holder">
+                                <img src="./img/index/doctor3.jpg" alt="Doctor">
+                                <div class="overlay-style">
+                                    <div class="box">
+                                        <div class="content">
+                                            <div class="top">
+                                                <h3>Jane Austin</h3>
+                                                <span>Gynecologist</span>
+                                            </div>
+                                            <span class="border"></span>
+                                            <div class="bottom">
+                                                <ul>
+                                                    <li><i class="fa fa-phone" aria-hidden="true"></i> +333 444 55 66</li>
+                                                    <li><i class="fa fa-envelope" aria-hidden="true"></i>
+                                                        Hospital@Hospitals.com</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-holder">
+                                    <h3>Jane Austin</h3>
+                                    <span>Gynecologist</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-12">
+                        <div class="single-team-member">
+                            <div class="img-holder">
+                                <img src="./img/index/doctor4.jpg" alt="Doctor">
+                                <div class="overlay-style">
+                                    <div class="box">
+                                        <div class="content">
+                                            <div class="top">
+                                                <h3>Sigmund Freud</h3>
+                                                <span>Psychologist</span>
+                                            </div>
+                                            <span class="border"></span>
+                                            <div class="bottom">
+                                                <ul>
+                                                    <li><i class="fa fa-phone" aria-hidden="true"></i> +333 444 55 66</li>
+                                                    <li><i class="fa fa-envelope" aria-hidden="true"></i>
+                                                        Hospital@Hospitals.com</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-holder">
+                                    <h3>Sigmund Freud</h3>
+                                    <span>Psychologist</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Doctors End -->
+
+        <!-- Testimonials Start -->
+        <section>
+            <div class="container">
+                <div class="row" style="margin-top:5rem;margin-bottom:3rem;">
+                    <div class="col-12">
+                        <h2 class="text-center best">Testimonials</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="sliderHolder d-flex justify-content-center">
+                        <div class="sliderItem">
+                            <div class="row">
+                                <div class="col-12 d-flex justify-content-center">
+                                    <p style="color:#777777;font-family: 'Lato', sans-serif;max-width:800px" class="text-center">The
+                                        doctors and nurses and aides were super duper helpful. I really really
+                                        appreciate
+                                        all
+                                        your kindness and good care you have provide me with. Thank you so much!</p>
+                                </div>
+                            </div>
+                            <div class="row my-4">
+                                <div class="col-12 d-flex justify-content-center">
+                                    <div class="circleDiv">
+                                        <img src="./img/index/circle1.jpg" alt="Testimonial" style="width:100%;height:100%">
+                                    </div>
+                                </div>
+                                <div class="col-12 d-flex justify-content-center mt-2">
+                                    <p style="color:#777777;font-family: 'Lato', sans-serif;max-width:800px" class="text-center">Martha
+                                        Stewart</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sliderItem2">
+                            <div class="row">
+                                <div class="col-12 d-flex justify-content-center">
+                                    <p style="color:#777777;font-family: 'Lato', sans-serif;max-width:800px" class="text-center">The
+                                        doctors and nurses and aides were super duper helpful. I really really
+                                        appreciate
+                                        all
+                                        your kindness and good care you have provide me with. Thank you so much!</p>
+                                </div>
+                            </div>
+                            <div class="row my-4">
+                                <div class="col-12 d-flex justify-content-center">
+                                    <div class="circleDiv">
+                                        <img src="./img/index/circle2.jpg" alt="Testimonial" style="width:100%;height:100%">
+                                    </div>
+                                </div>
+                                <div class="col-12 d-flex justify-content-center mt-2">
+                                    <p style="color:#777777;font-family: 'Lato', sans-serif;max-width:800px" class="text-center">Agatha
+                                        Christie</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 d-flex justify-content-center buttonDiv">
+                        <button class="previous mr-1"><i class="fas fa-circle prevI" style="color:#ebebeb"></i></button>
+                        <button class="next ml-1"><i class="far fa-circle nextI" style="color:#ebebeb"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Testimonials End -->
+
+        <!-- Philosophy Starts -->
+        <section>
+            <div class="d-flex my-5 phDiv">
+                <div class="col-md-6 col-12 p-0">
+                    <div>
+                        <img src="./img/index/photo1.jpg" alt="Photo" style="width:100%;height:100%">
+                    </div>
+                </div>
+                <div class="col-md-6 col-12" style="background-color:#0f2b51;padding: 3rem;">
+                    <div>
+                        <div class="row">
+                            <div class="col-12">
+                                <h3 class="white">OUR PHILOSOPHY</h3>
+                            </div>
+                            <div class="col-12 mt-3">
+                                <h4 class="whiteDesc">This is the subtitle for the heading</h4>
+                            </div>
+                            <div class="col-12 my-3">
+                                <p class="text-white">Patients have an important role to play at each stage of their
+                                    care and the five safety tips will serve to encourage them to be more involved in
+                                    their health care.</p>
+                            </div>
+                            <div class="col-12 my-3">
+                                <p class="text-white">Patients can do a lot of small things to make their health-care
+                                    experience as safe as possible.</p>
+                            </div>
+                            <div class="col-12 my-3">
+                                <p class="text-white">Hospitals are places of recovery and healing but there are also
+                                    safety risks for patients, such as infections, falls and medication errors that can
+                                    happen despite our best efforts.</p>
+                            </div>
+                            <div class="col-12 mt-3">
+                                <button class="philosphy">Learn More</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Philosophy Ends -->
+
+        <!-- Departments Starts -->
+        <section>
+            <div class="container ">
+                <div class="row" style="margin-top:5rem;margin-bottom:3rem;">
+                    <div class="col-12">
+                        <h2 class="text-center best">OUR DEPARTMENTS</h2>
+                    </div>
+                </div>
+                <div class="row d-flex flex-wrap">
+                    <div class="col-12 col-md-3 mb-5">
+                        <div class="owl-item" style="width: 270px; margin-right: 30px;">
+                            <div class="single-item text-center">
+                                <div class="iocn-holder">
+                                    <i class="fas fa-brain depIcon"></i>
+                                </div>
+                                <div class="text-holder">
+                                    <h3>Neurology</h3>
+                                    <p> Who chooses to enjoy a pleasure that has annoying consquences, or one who
+                                        avoids a
+                                        pain.</p>
+                                </div>
+                                <a class="readmore" href="#">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-3 mb-5">
+                        <div class="owl-item" style="width: 270px; margin-right: 30px;">
+                            <div class="single-item text-center">
+                                <div class="iocn-holder">
+                                    <i class="fas fa-teeth-open depIcon"></i>
+                                </div>
+                                <div class="text-holder">
+                                    <h3>Dental</h3>
+                                    <p> Who chooses to enjoy a pleasure that has annoying consquences, or one who
+                                        avoids a
+                                        pain.</p>
+                                </div>
+                                <a class="readmore" href="#">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-3 mb-5">
+                        <div class="owl-item" style="width: 270px; margin-right: 30px;">
+                            <div class="single-item text-center">
+                                <div class="iocn-holder">
+                                    <i class="fas fa-heartbeat depIcon"></i>
+                                </div>
+                                <div class="text-holder">
+                                    <h3>Cardiology</h3>
+                                    <p> Who chooses to enjoy a pleasure that has annoying consquences, or one who
+                                        avoids a
+                                        pain.</p>
+                                </div>
+                                <a class="readmore" href="#">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-3 mb-5">
+                        <div class="owl-item" style="width: 270px; margin-right: 30px;">
+                            <div class="single-item text-center">
+                                <div class="iocn-holder">
+                                    <i class="far fa-eye depIcon"></i>
+                                </div>
+                                <div class="text-holder">
+                                    <h3>Ophthalmology</h3>
+                                    <p> Who chooses to enjoy a pleasure that has annoying consquences, or one who
+                                        avoids a
+                                        pain.</p>
+                                </div>
+                                <a class="readmore" href="#">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Department Ends -->
+    </main>
+    <!-- Content Ends -->
+
+    <!-- Same Footer Starts -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-12" style="margin-top:4rem;margin-bottom:4rem">
+                    <div class="row">
+                        <div class="col-12">
+                            <div>
+                                <img src="./img/global/footerLogo.png" alt="Logo">
+                            </div>
+                        </div>
+                        <div class="col-12 mt-2">
+                            <p class="footerP">My kinda people, my kinda place. There's something special about this
+                                place.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-12" style="margin-top:4rem;margin-bottom:4rem">
+                    <div class="row">
+                        <div class="col-12">
+                            <div>
+                                <h2 class="footerH">Contact Details</h2>
+                            </div>
+                        </div>
+                        <div class="col-12 mt-2">
+                            <ul>
+                                <li>
+                                    <i class="fas fa-map-marker-alt footerIcon"></i>
+                                    <p class="footerP">Park Drive, Varick Str New York,
+                                        NY 10012, USA</p>
+                                </li>
+                                <li>
+                                    <i class="fas fa-envelope footerIcon"></i>
+                                    <p class="footerP">Hospital@Hospital.com</p>
+                                </li>
+                                <li>
+                                    <i class="fas fa-phone footerIcon"></i>
+                                    <p class="footerP">+333 444 55 66</p>
+                                </li>
+                                <li>
+                                    <i class="far fa-clock footerIcon"></i>
+                                    <p class="footerP">Mon-Satday: 9am to 18pm</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-12" style="margin-top:4rem;margin-bottom:4rem">
+                    <div class="row">
+                        <div class="col-12">
+                            <div>
+                                <h2 class="footerH">Latest Posts</h2>
+                            </div>
+                        </div>
+                        <div class="col-12 mt-2">
+                            <ul>
+                                <li>
+                                    <i class="fas fa-list footerIcon"></i>
+                                    <p class="footerP">Together We Can Do So Much</p>
+                                </li>
+                                <li>
+                                    <i class="fas fa-list footerIcon"></i>
+                                    <p class="footerP">Together We Can Do So Much</p>
+                                </li>
+                                <li>
+                                    <i class="fas fa-list footerIcon"></i>
+                                    <p class="footerP">Together We Can Do So Much</p>
+                                </li>
+                                <li>
+                                    <i class="fas fa-list footerIcon"></i>
+                                    <p class="footerP">Together We Can Do So Much</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Same Footer Ends -->
+
+    <!-- Slider JS Starts -->
+    <script src="./js/index/index.js"></script>
+    <!-- SLider JS Ends -->
+</body>
+
+
+
+</html>

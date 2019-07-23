@@ -1,0 +1,393 @@
+/* Main Starts */
+
+/* Slider CSS  Starts*/
+.slider {
+    position: relative;
+    height: 600px;
+    width: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+}
+.slider-container{
+    position: relative;
+    height: 100%;
+    transition: all 0.7s;
+}
+.slider .slider-item {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.slider .slider-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.slider .slider-button{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: #0f2b51;
+    cursor: pointer;
+    outline-style: none;
+}
+.slider .slider-button.slider-button-left{
+    left: 10px;
+}
+.slider .slider-button.slider-button-right{
+    left: 98%
+}
+
+
+.slider-content {
+    position: absolute;
+    color: #fff;
+    font-size: 30px;
+}
+/* SLider CSS Ends */
+
+.best{
+    font-size: 38px;
+    color: #0f2b51;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+.bestDesc{
+    font-size: 18px;
+    color: #999999;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+.wrapIcon{
+    color: #d32f2f;
+    font-size: 2.5rem;
+}
+.wrapperTitle{
+    font-size: 18px;
+    color: #333333;
+    font-weight: 400;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Appointment Starts */
+.appointmentSection label{
+    color: white;
+}
+.appointmentH{
+    font-size: 20px;
+    color: #ffffff;
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 700;
+}
+.appointmentSubmit{
+    background-color: #43a047;
+    border:none;
+    color: white;
+    font-family: 'Montserrat',sans-serif;
+    border-radius: 3px;
+    letter-spacing: 1px;
+}
+/* Appointment Ends */
+
+/* Doctors Start */
+.single-team-member {
+    position: relative;
+    margin-bottom: 35px;
+}
+.single-team-member .img-holder {
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+.single-team-member .img-holder img{
+    transition: all 0.5s ease 0s;
+    width: 100%;
+}
+.single-team-member .img-holder .overlay-style {
+    background-color: rgba(15,37,81,0.8);
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: background-color 0.4s ease 0s;
+    padding: 0 20px;
+    transform: translate3d(0px, -100%, 0px);
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+	filter: alpha(opacity=0);
+	transition: all .9s ease;
+	transition-delay: .5s; 
+}
+.single-team-member .img-holder .overlay-style .box{
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+.single-team-member .img-holder .overlay-style .box .content {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: left;
+}
+.single-team-member .img-holder .overlay-style .box .content .top{
+	position: relative;
+	right: 100%;  
+    transition: all .9s ease;
+}
+.single-team-member:hover .img-holder .overlay-style .box .content .top{
+	right: 0%;      
+}
+.single-team-member .img-holder .overlay-style .box .content .top h3 {
+    color: #ffffff;
+    margin: 0 0 3px;
+}
+.single-team-member .img-holder .overlay-style .box .content .top span {
+    color: #fcfcfc;
+}
+.single-team-member .img-holder .overlay-style .box .content .border {
+    display: block;
+    height: 1px;
+    width: 50px;
+    background: #ffffff;
+    margin: 11px 0 21px;
+}
+.single-team-member .img-holder .overlay-style .box .content .bottom{
+	position: relative;
+	left: 100%;  
+    transition: all .9s ease;    
+}
+.single-team-member:hover .img-holder .overlay-style .box .content .bottom{
+	left: 0%;      
+}
+.single-team-member .img-holder .overlay-style .box .content .bottom ul li{
+    color: #ffffff;   
+    line-height: 32px;
+    list-style-type: none;
+}
+.single-team-member .img-holder .overlay-style .box .content .bottom ul li i{
+    display: inline-block;
+    padding-right: 8px;
+}
+.single-team-member:hover .img-holder .overlay-style {
+    transform: translate3d(0px, 0%, 0px);  
+}
+.single-team-member .text-holder {
+    background: #ffffff;
+    padding-top: 18px;
+    padding-bottom: 12px;
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    transform: translate3d(0px, 0%, 0px);
+    transition: all .9s ease;    
+    transition-delay: 0.10s;
+    border: 1px solid #f5f2f2;
+    border-top: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+}
+.single-team-member .text-holder h3{
+    color: #222222;
+    font-size: 20px;
+    text-transform: none;
+    margin: 0 0 3px;
+}
+.single-team-member .text-holder span{
+    color: #0f2551;
+}
+.single-team-member:hover .text-holder{
+    transform: translate3d(0px, 120%, 0px);
+    opacity: 0;
+}
+/* Doctors End */
+
+/* Testimonials Start */
+.circleDiv{
+    border-radius: 100%;
+    width: 80px;
+    height: 80px;
+}
+.circleDiv img{
+    border-radius: 100%;
+}
+.previous , .next {
+    background-color: transparent;
+    border: none
+}
+.previous:focus , .next:focus{
+    outline: none
+}
+.sliderHolder {
+    position: relative;
+    width: 100%;
+    height: 15rem;
+    overflow: hidden;
+}
+.sliderItem {
+    position: absolute;
+    transition: all 1s
+}
+.sliderItem2 {
+    left: 1400px;
+    transition: all 1s
+}
+.sliderItem2 {
+    position: absolute
+}
+/* Testimonials End */
+
+.white {
+    color: white;
+    font-size: 34px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+.whiteDesc{
+    font-size: 20px;
+    color: #e1f5fe;
+}
+.philosphy{
+    background-color: white;
+    color: #0f2b51;
+    border: none;
+    padding: 1rem;
+    border-radius: 2px;
+}
+@media only screen and (max-width:768px){
+    .phDiv{
+        flex-direction: column;
+    }
+}
+
+/* Departments Start */
+.single-item {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    border: 1px solid #f0f0f0;
+    padding: 9px 9px 10px;
+}
+.single-item .iocn-holder {
+    position: relative;
+    background: #fcfcfc;
+    display: block;
+    padding: 25px 0 25px;
+    z-index: 1;
+}
+.single-item .iocn-holder:after {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 0%;
+    background: #0f2b51;
+    content: "";
+    transition: all 500ms ease;
+    transition-delay: 0.10s;
+}
+.single-item:hover .iocn-holder:after{
+    height: 100%;    
+}
+.single-item .iocn-holder span:before {
+    color: #0f2b51;
+    font-size: 100px;
+    line-height: 100px;
+    transition: all 500ms ease;
+    transition-delay: 0.50s;
+}
+.single-item:hover .iocn-holder span:before{
+    color: #ffffff;    
+}
+.single-item .text-holder {
+    display: block;
+    padding: 29px 10px 36px;
+    border-bottom: 1px solid #f0f0f0;
+    margin-left: -9px;
+    margin-right: -9px;
+}
+.single-item .text-holder h3 {
+    margin: 0 0 13px;
+}
+.single-item .text-holder p{
+    margin: 0;    
+}
+.single-item a.readmore {
+    border: 1px solid #f0f0f0;
+    color: #222222;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 6px 15px 4px;
+    border-radius: 20px;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    top: -20px;
+    background: #fff;
+    transition: all 500ms ease;
+}
+.single-item:hover a.readmore{
+    background: #0f2b51;
+    border-color: #0f2b51;
+    color: #ffffff;
+}
+
+.owl-controls {
+    position: absolute;
+    right: 0;
+    top: -90px;
+}
+.owl-theme .owl-nav{
+    margin: 0;
+}
+.owl-theme .owl-nav [class*="owl-"] {
+    background: transparent;
+    border-radius: 0;
+    color: #888888;
+    font-size: 24px;
+    font-weight: 700;
+    height: 40px;
+    line-height: 38px;
+    margin: 0 0 0 0px;
+    padding: 0;
+    width: 40px;
+    border: 2px solid #f0f0f0;
+    transition: all 700ms ease 0s;
+}
+.owl-theme .owl-nav .owl-next {
+    margin-left: 10px;
+}
+.owl-theme .owl-nav [class*="owl-"]:hover{
+    border-color: #0f2b51;
+    color: #0f2b51;
+}
+.owl-item h3{
+    font-family: 'Poppins', sans-serif;
+    color: #222222;
+}
+.depIcon
+{
+    color: #0f2b51;
+    font-size: 3.3rem;
+    transition: all 500ms ease;
+    transition-delay: 0.45s;
+}
+.single-item:hover .depIcon{
+    color: white;
+}
+/* Departmetns End */
+/* Main Ends */
