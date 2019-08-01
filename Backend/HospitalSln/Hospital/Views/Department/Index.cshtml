@@ -1,0 +1,64 @@
+﻿@model Hospital.Models.ViewModelHome
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@section style{
+    <title>Departmetns</title>
+    <link href="~/Public/css/departments/departments.css" rel="stylesheet" />
+}
+
+<!-- Content Starts -->
+<main>
+    <!-- Background Image Starts -->
+    <section style="background-image:url('../../Public/img/global/header.jpg')" class="p-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="contactH">Departments</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Bakcground Image Ends -->
+
+    <section>
+        <div class="container">
+            <div class="row my-5">
+                <div class="col-12">
+                    <p style="color:#555555">
+                        Have you tried Wheaties? They’re whole wheat with all of the bran.
+                        Won’t
+                        you try Wheaties? For wheat is the best food of man. They’re crispy and crunchy the whole
+                        year
+                        through, The kiddies never tire of them and neither will you. So just try Wheaties, the
+                        best
+                        breakfast food in the land!
+                    </p>
+                </div>
+            </div>
+            <div class="row flex-wrap">
+                @foreach (var department in Model.Departments)
+                {
+                    <div class="col-md-3 col-12 depCard mb-5">
+                        <div class="cardHolder">
+                            <a href="@Url.Action("One","Department",new {Id = department.Id })">
+                                <img src="~/Uploads/Departments/@department.Photo" alt="@department.NameEng">
+                            </a>
+
+                        </div>
+                        <div class="content mt-3">
+                            <div class="row ">
+                                <div class="col-12 mb-2">
+                                    <a href="@Url.Action("One","Department",new { Id = department.Id})">@department.NameEng</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+</main>
+<!-- Content Ends -->

@@ -1,0 +1,68 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+
+    <!-- Bootstrap Starts -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <!-- Bootstrap Ends -->
+    <!-- Google Fonts Start -->
+    <link href="https://fonts.googleapis.com/css?family=Cinzel&display=swap" rel="stylesheet">
+    <!-- Google Fonts Ends -->
+
+    <style>
+        .container {
+            width: 500px;
+        }
+
+        .heading, button {
+            font-family: 'Cinzel', serif;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="container">
+            <div class="row " style="margin-top:11rem">
+                <div class="col-12">
+                    <form action="@Url.Action("Signin","Login")" method="POST">
+                        @Html.AntiForgeryToken()
+                        <div class="loginDiv">
+                            <div class="col-12">
+                                <h1 class="text-center heading">Login</h1>
+                            </div>
+                            <div class="form-group">
+                                <label for="username">Username</label>
+                                <input type="text" name="Username" class="form-control" id="username" placeholder="Username">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" name="Password" class="form-control" id="password" placeholder="Password">
+                            </div>
+                            @if (Session["loginError"] != null)
+                            {
+                                <div class="alert alert-danger">@Session["loginError"]</div>
+                                Session["loginError"] = null;
+                            }
+                            <div class="form-group">
+                                <button class="form-control" type="submit">Sign In</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

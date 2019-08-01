@@ -1,0 +1,169 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Global CSS starts -->
+    <link rel="icon" href="~/Public/img/global/icon.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Public/css/global.css">
+    <script src="https://kit.fontawesome.com/55ffc5f93b.js"></script>
+    <!-- Fonts Start -->
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+    <!-- Fonts End -->
+    <!-- Global CSS ends -->
+    <!-- Page Level CSS Starts -->
+    @RenderSection("style", false)
+    <!-- Page Level CSS Ends -->
+</head>
+
+<body>
+
+    <!-- Same Header Starts -->
+    <header>
+        <section class="headerSec py-4">
+            <div class="container">
+                <div class="d-flex row">
+                    <div class="col-md-3 col-12 d-flex logoDiv">
+                        <div class="logoHolder">
+                            <a href="@Url.Action("Index","Home")">
+                                <img src="~/Public/img/global/logo.png" alt="">
+                            </a>
+                        </div>
+                        <div class="d-flex ml-3">
+                            @foreach (var item in Hospital.Resources.LanguageMang.AvailableLanguages)
+                            {   
+                                <a class="mr-3" href="@Url.Action("ChangeLang","Home",new { lang = item.LanguageCultureName},null)" style="color:#555555">@item.LanguageFullName</a>
+                            }
+                        </div>
+                    </div>
+                    <div class="col-md-9 col-12 menuDiv">
+                        <ul class="navbar">
+                            <li>
+                                <a href="@Url.Action("Index","Doctor")">
+                                    @Hospital.Resources.Resource.Doctors
+                                </a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("Index","Department")">
+                                    @Hospital.Resources.Resource.Departments
+                                </a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("Index","Gallery")">
+                                    @Hospital.Resources.Resource.Gallery
+                                </a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("Index","Contact")">
+                                    @Hospital.Resources.Resource.Contact
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </header>
+    <!-- Same Header Ends -->
+   
+     @RenderBody()
+
+    <!-- Same Footer Starts -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-12" style="margin-top:4rem;margin-bottom:4rem">
+                    <div class="row">
+                        <div class="col-12">
+                            <div>
+                                <img src="~/Public/img/global/footerLogo.png" alt="Logo">
+                            </div>
+                        </div>
+                        <div class="col-12 mt-2">
+                            <p class="footerP">
+                                My kinda people, my kinda place. There's something special about this
+                                place.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-12" style="margin-top:4rem;margin-bottom:4rem">
+                    <div class="row">
+                        <div class="col-12">
+                            <div>
+                                <h2 class="footerH">@Hospital.Resources.Resource.ContactDetails</h2>
+                            </div>
+                        </div>
+                        <div class="col-12 mt-2">
+                            <ul>
+                                <li>
+                                    <i class="fas fa-map-marker-alt footerIcon"></i>
+                                    <p class="footerP">
+                                        9400 Santa Monica Blvd Suite 102, Beverly Hills, CA 90210, USA
+                                    </p>
+                                </li>
+                                <li>
+                                    <i class="fas fa-envelope footerIcon"></i>
+                                    <p class="footerP">Hospital@Hospital.com</p>
+                                </li>
+                                <li>
+                                    <i class="fas fa-phone footerIcon"></i>
+                                    <p class="footerP">+333 444 55 66</p>
+                                </li>
+                                <li>
+                                    <i class="far fa-clock footerIcon"></i>
+                                    <p class="footerP">Mon-Fri 9:00 - 00:00 / Sat-Sun 11:00 - 10:00</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-12" style="margin-top:4rem;margin-bottom:4rem">
+                    <div class="row">
+                        <div class="col-12">
+                            <div>
+                                <h2 class="footerH">@Hospital.Resources.Resource.LatestPosts</h2>
+                            </div>
+                        </div>
+                        <div class="col-12 mt-2">
+                            <ul>
+                                <li>
+                                    <i class="fas fa-list footerIcon"></i>
+                                    <p class="footerP">Together We Can Do So Much</p>
+                                </li>
+                                <li>
+                                    <i class="fas fa-list footerIcon"></i>
+                                    <p class="footerP">Together We Can Do So Much</p>
+                                </li>
+                                <li>
+                                    <i class="fas fa-list footerIcon"></i>
+                                    <p class="footerP">Together We Can Do So Much</p>
+                                </li>
+                                <li>
+                                    <i class="fas fa-list footerIcon"></i>
+                                    <p class="footerP">Together We Can Do So Much</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Same Footer Ends -->
+
+    <!-- Slider JS Starts -->
+    @RenderSection("script",false)
+    <!-- SLider JS Ends -->
+</body>
+
+
+
+</html>

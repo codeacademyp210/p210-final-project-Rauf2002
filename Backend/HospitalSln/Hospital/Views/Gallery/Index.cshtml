@@ -1,0 +1,72 @@
+﻿@model Hospital.Models.ViewModelHome
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@section style{
+    <title>Gallery</title>
+    <link href="~/Public/css/gallery/gallery.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/Public/js/swipebox/src/css/swipebox.css">
+}
+
+<!-- Content Starts -->
+<main>
+    <!-- Background Image Starts -->
+    <section style="background-image:url('../../Public/img/global/header.jpg')" class="p-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="contactH">Gallery</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Bakcground Image Ends -->
+    <!-- Gallery Starts -->
+    <section>
+        <div class="container">
+            <div class="row mt-5 flex-wrap">
+                @foreach (var gallery in Model.Galleries)
+                {
+                    <div class="col-md-3 col-12 mb-5">
+                        <div class="galleryCard">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="imgHolder">
+                                        <img src="~/Uploads/Gallery/@gallery.Photo" alt="@gallery.NameEng">
+                                        <a class="swipebox" href="~/Uploads/Gallery/@gallery.Photo">
+                                            <div class="overlay">
+                                                <i class="fas fa-search"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+
+                                </div>
+                                <div class="col-12 mt-3">
+                                    <h3 class="cardH">@gallery.NameEng</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+    <!-- Gallery Ends -->
+</main>
+<!-- Content Ends -->
+
+@section script{
+    <!-- Swipebox JS  Starts -->
+    <script src="~/Public/js/swipebox/lib/jquery-2.1.0.min.js"></script>
+    <script src="~/Public/js/swipebox/src/js/jquery.swipebox.js"></script>
+    <script type="text/javascript">
+        (function ($) {
+
+            $('.swipebox').swipebox();
+
+        })(jQuery);
+    </script>
+    <!-- Swipebox JS Ends -->
+}

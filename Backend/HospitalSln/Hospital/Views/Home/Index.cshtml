@@ -1,0 +1,362 @@
+﻿@model Hospital.Models.ViewModelHome
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+@section style{
+    <title>Home</title>
+    <link rel="stylesheet" href="~/Public/css/index/index.css" />
+}
+
+<!-- Content Starts -->
+<main>
+    <input class="d-none" value="@ViewBag.cult"/>
+    <section>
+        <div class="slider">
+            <div class="slider-container">
+                <div class="slider-item active-slide">
+                    <img src="~/Public/img/index/slider1.jpg">
+                </div>
+                <div class="slider-item">
+                    <img src="~/Public/img/index/slider2.jpg">
+                </div>
+                <div class="slider-item">
+                    <img src="~/Public/img/index/slider3.jpg">
+                </div>
+            </div>
+            <button class="slider-button slider-button-left"><i class="fas fa-angle-left"></i></button>
+            <button class="slider-button slider-button-right"><i class="fas fa-angle-right"></i></button>
+        </div>
+    </section>
+
+    <!-- Appointment Starts -->
+    <section style="background-color:#1565c0" class="appointmentSection">
+        <div class="container">
+            <div class="row pt-5 mb-4">
+                <div class="col-12">
+                    <h3 class="appointmentH">@Hospital.Resources.Resource.BookAppointment</h3>
+                </div>
+            </div>
+            <form   onsubmit="return validateForm()"  method="POST"  action="@Url.Action("Create","Appointment")"  >
+                @Html.AntiForgeryToken()
+                <div class="row flex-wrap pb-5">
+                    <div class="col-md-4 col-12">
+                        <div class="form-group">
+                            <label for="name">@Hospital.Resources.Resource.PatientName</label>
+                            <input type="text" class="form-control" id="name" placeholder="Full Name" name="Name">
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-12">
+                        <div class="form-group">
+                            <label for="phone">@Hospital.Resources.Resource.PhoneNumber</label>
+                            <input type="text" class="form-control" id="phone" placeholder="Phone Number" name="Phone">
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-12">
+                        <div class="form-group">
+                            <label for="department">@Hospital.Resources.Resource.SelectDepartment</label>
+                            <select name="DepartmentId" class="form-control" id="department">
+                                @foreach (var department in Model.Departments)
+                                {
+                                    if (ViewBag.cult == "en")
+                                    {
+                                        <option value="@department.Id">@department.NameEng</option>
+                                    }
+                                    else if (ViewBag.cult == "az")
+                                    {
+                                        <option value="@department.Id">@department.NameAz</option>
+                                    }
+                                }
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-12">
+                        <div class="form-group">
+                            <label for="doctor">@Hospital.Resources.Resource.SelectDoctor</label>
+                            <select name="DoctorId" class="form-control" id="doctor">
+                                @foreach (var doctor in Model.Doctors)
+                                {
+                                    <option value="@doctor.Id">@doctor.Name @doctor.Surname (@doctor.Departments.NameEng)</option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-12">
+                        <div class="form-group">
+                            <label>@Hospital.Resources.Resource.SelectTime</label>
+                            <input type="date" name="Time" class="form-control" id="date">
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-12">
+                        <label style="color:#1565c0">Nothing</label>
+                        <button type="submit" class="appointmentSubmit form-control">@Hospital.Resources.Resource.Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+    <!-- Appointment Ends -->
+    <section>
+        <div class="container">
+            <div class="row" style="margin-top:5rem;margin-bottom:3rem;">
+                <div class="col-12">
+                    <h2 class="text-center best">@Hospital.Resources.Resource.BestHospital</h2>
+                </div>
+                <div class="col-12">
+                    <h4 class="text-center bestDesc">@Hospital.Resources.Resource.WhenItComes</h4>
+                </div>
+            </div>
+            <div class="row d-flex flex-wrap justify-content-between">
+                <div class="col-md-4 col-12 wrapper my-4">
+                    <div class="row">
+                        <div class="col-12 text-center ">
+                            <i class="fas fa-gopuram wrapIcon"></i>
+                        </div>
+                        <div class="col-12 text-center mt-4 mb-3">
+                            <h4 class="wrapperTitle">@Hospital.Resources.Resource.PowerfulDevices</h4>
+                        </div>
+                        <div class="col-12 text-center">
+                            <p style="font-size:16px;color:#555555">
+                                Lorem Ipsum is simply dummy text of the
+                                printing and typesetting industry. Lorem Ipsum has been the industry's standard.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-12 wrapper my-4">
+                    <div class="row">
+                        <div class="col-12 text-center ">
+                            <i class="fas fa-syringe wrapIcon"></i>
+                        </div>
+                        <div class="col-12 text-center mt-4 mb-3">
+                            <h4 class="wrapperTitle">@Hospital.Resources.Resource.Hygiene</h4>
+                        </div>
+                        <div class="col-12 text-center">
+                            <p style="font-size:16px;color:#555555">
+                                Lorem Ipsum is simply dummy text of the
+                                printing and typesetting industry. Lorem Ipsum has been the industry's standard.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-12 wrapper my-4">
+                    <div class="row">
+                        <div class="col-12 text-center ">
+                            <i class="fas fa-ambulance wrapIcon"></i>
+                        </div>
+                        <div class="col-12 text-center mt-4 mb-3">
+                            <h4 class="wrapperTitle">@Hospital.Resources.Resource.Fast</h4>
+                        </div>
+                        <div class="col-12 text-center">
+                            <p style="font-size:16px;color:#555555">
+                                Lorem Ipsum is simply dummy text of the
+                                printing and typesetting industry. Lorem Ipsum has been the industry's standard.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Doctors Start -->
+    <section>
+        <div class="container">
+            <div class="row" style="margin-top:5rem;margin-bottom:3rem;">
+                <div class="col-12">
+                    <h2 class="text-center best">@Hospital.Resources.Resource.OurDoctors</h2>
+                </div>
+                <div class="col-12">
+                    <h4 class="text-center bestDesc">
+                        @Hospital.Resources.Resource.Specialized
+                    </h4>
+                </div>
+            </div>
+            <div class="row d-flex justify-content-between flex-wrap">
+                @foreach (var doctor in Model.Doctors)
+                {
+                    <div class="col-md-3 col-12">
+                        <div class="single-team-member">
+                            <div class="img-holder">
+                                <img src="~/Uploads/Doctors/@doctor.Photo" alt="Doctor">
+                                <div class="overlay-style">
+                                    <div class="box">
+                                        <div class="content">
+                                            <div class="top">
+                                                <h3>@doctor.Name @doctor.Surname</h3>
+
+                                                
+                                            </div>
+                                            <span class="border"></span>
+                                            <div class="bottom">
+                                                <ul>
+                                                    <li><i class="fa fa-phone" aria-hidden="true"></i> @Model.Setting.Phone</li>
+                                                    <li>
+                                                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                                                        @Model.Setting.Email
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-holder">
+                                    <h3>@doctor.Name @doctor.Surname</h3>
+                                    <span>@doctor.Departments.NameEng</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+    <!-- Doctors End -->
+    <!-- Testimonials Start -->
+    <section>
+        <div class="container">
+            <div class="row" style="margin-top:5rem;margin-bottom:3rem;">
+                <div class="col-12">
+                    <h2 class="text-center best">@Hospital.Resources.Resource.Testimonials</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="sliderHolder d-flex justify-content-center">
+                    <div class="sliderItem">
+                        <div class="row">
+                            <div class="col-12 d-flex justify-content-center">
+                                <p style="color:#777777;font-family: 'Lato', sans-serif;max-width:800px" class="text-center">
+                                    @Hospital.Resources.Resource.test1
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row my-4">
+                            <div class="col-12 d-flex justify-content-center">
+                                <div class="circleDiv">
+                                    <img src="~/Public/img/index/circle1.jpg" alt="Testimonial" style="width:100%;height:100%">
+                                </div>
+                            </div>
+                            <div class="col-12 d-flex justify-content-center mt-2">
+                                <p style="color:#777777;font-family: 'Lato', sans-serif;max-width:800px" class="text-center">
+                                    Martha
+                                    Stewart
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sliderItem2">
+                        <div class="row">
+                            <div class="col-12 d-flex justify-content-center">
+                                <p style="color:#777777;font-family: 'Lato', sans-serif;max-width:800px" class="text-center">
+                                    @Hospital.Resources.Resource.test1
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row my-4">
+                            <div class="col-12 d-flex justify-content-center">
+                                <div class="circleDiv">
+                                    <img src="~/Public/img/index/circle2.jpg" alt="Testimonial" style="width:100%;height:100%">
+                                </div>
+                            </div>
+                            <div class="col-12 d-flex justify-content-center mt-2">
+                                <p style="color:#777777;font-family: 'Lato', sans-serif;max-width:800px" class="text-center">
+                                    Agatha
+                                    Christie
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 d-flex justify-content-center buttonDiv">
+                    <button class="previous mr-1"><i class="fas fa-circle prevI" style="color:#ebebeb"></i></button>
+                    <button class="next ml-1"><i class="far fa-circle nextI" style="color:#ebebeb"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Testimonials End -->
+    <!-- Philosophy Starts -->
+    <section>
+        <div class="d-flex my-5 phDiv">
+            <div class="col-md-6 col-12 p-0">
+                <div>
+                    <img src="~/Public/img/index/photo1.jpg" alt="Photo" style="width:100%;height:100%">
+                </div>
+            </div>
+            <div class="col-md-6 col-12" style="background-color:#0f2b51;padding: 3rem;">
+                <div>
+                    <div class="row">
+                        <div class="col-12">
+                            <h3 class="white">@Hospital.Resources.Resource.OurPhilosophy</h3>
+                        </div>
+                        <div class="col-12 mt-3">
+                            <h4 class="whiteDesc">This is the subtitle for the heading</h4>
+                        </div>
+                        <div class="col-12 my-3">
+                            <p class="text-white">
+                                Patients have an important role to play at each stage of their
+                                care and the five safety tips will serve to encourage them to be more involved in
+                                their health care.
+                            </p>
+                        </div>
+                        <div class="col-12 my-3">
+                            <p class="text-white">
+                                Patients can do a lot of small things to make their health-care
+                                experience as safe as possible.
+                            </p>
+                        </div>
+                        <div class="col-12 my-3">
+                            <p class="text-white">
+                                Hospitals are places of recovery and healing but there are also
+                                safety risks for patients, such as infections, falls and medication errors that can
+                                happen despite our best efforts.
+                            </p>
+                        </div>
+                        <div class="col-12 mt-3">
+                            <button class="philosphy">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Philosophy Ends -->
+    <!-- Departments Starts -->
+    <section>
+        <div class="container ">
+            <div class="row" style="margin-top:5rem;margin-bottom:3rem;">
+                <div class="col-12">
+                    <h2 class="text-center best">@Hospital.Resources.Resource.OurDepartments</h2>
+                </div>
+            </div>
+            <div class="row d-flex flex-wrap">
+                @foreach (var department in Model.Departments)
+                {
+                    <div class="col-12 col-md-3 mb-5">
+                        <div class="owl-item" style="width: 270px; margin-right: 30px;">
+                            <div class="single-item text-center">
+                                <div class="iocn-holder">
+                                    <i class="@department.Icon depIcon"></i>
+                                </div>
+                                <div class="text-holder">
+                                    <h3>@department.NameEng</h3>
+                                    <p>
+                                        @department.DesEng
+                                    </p>
+                                </div>
+                                <a class="readmore" target="_blank" href="@Url.Action("One","Department",new { Id = department.Id})">@Hospital.Resources.Resource.ReadMore</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+    <!-- Department Ends -->
+</main>
+<!-- Content Ends -->
+
+@section script{
+    <script src="~/Public/js/index/index.js"></script>
+}

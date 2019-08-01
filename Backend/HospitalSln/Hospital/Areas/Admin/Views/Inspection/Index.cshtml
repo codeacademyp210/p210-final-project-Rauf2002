@@ -1,0 +1,93 @@
+﻿@model IEnumerable<Hospital.Models.Inspections>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@section style{
+    <title>Inspections</title>
+}
+
+
+
+<!-- Content Starts -->
+<main>
+    <div class="container">
+        <div class="row my-5 d-flex justify-content-between">
+            <div class="col-3">
+                <h1 class="tableName">Inspections</h1>
+            </div>
+            <div class="col-3 d-flex justify-content-end">
+                <a href="@Url.Action("Create","Inspection")"><button type="button" class="btn btn-primary create">Create</button></a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <table class="table table-borderless">
+                    <thead>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Doctor</th>
+                            <th scope="col">Edit / Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td class="d-none">@item.Id</td>
+                                <td>@item.Name</td>
+                                <td>@item.Price</td>
+                                <td>@item.Doctors.Name @item.Doctors.Surname</td>
+                                <td>
+                                    <a href="@Url.Action("Edit","Inspection",new {id = item.Id })"><i class="far fa-edit mr-1 edit"></i></a>
+                                    <i class="fas fa-trash delete" style="cursor:pointer"></i>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</main>
+<!-- Content Ends -->
+
+
+
+
+
+
+
+@section script{
+    <!-- Delete AJAX Starts -->
+    <script>
+        $('.delete').click(function () {
+
+            var _this = this;
+
+            swal({
+                title: "Are you sure?",
+                text: "Once deleted, you will not be able to recover this  file!",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+                .then((willDelete) => {
+                    if (willDelete) {
+
+                        var myId = _this.parentElement.parentElement.firstElementChild.innerHTML;
+                        $.ajax({
+                            url: "Inspection/Delete",
+                            type: "GET",
+                            data: ({ Id: myId })
+                        });
+                        location.reload();
+                    }
+                });
+        });
+    </script>
+    <!-- Delete AJAX Ends -->
+}

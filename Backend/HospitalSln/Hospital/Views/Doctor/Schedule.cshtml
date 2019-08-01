@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewBag.Title = "Schedule";
+}
+
+@section style{
+    <title>Schedule</title>
+    <link rel="stylesheet" href="~/Public/css/schedule/schedule.css">
+}
+
+<main>
+    <!-- Background Image Starts -->
+    <section style="background-image:url('../../Public/img/global/header.jpg')" class="p-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="contactH">Doctor Schedules</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Bakcground Image Ends -->
+    <!-- Table Starts -->
+    <section>
+        <div class="container">
+            <div class="row my-5">
+                <div class="col-12">
+                    <h1 class="doctorName">Dr. Verona Didone</h1>
+                </div>
+                <div class="col-12">
+                    <a href="@Url.Action("One","Doctor")" class="profile"><i class="fas fa-stethoscope"></i> View Profile</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Patient</th>
+                                <th scope="col">Time</th>
+                                <th scope="col">Patient Number</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>@@mdo</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Table Ends -->
+</main>

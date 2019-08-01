@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Hospital.Models.Settings>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@section style{
+    <title>Settings</title>
+    }
+
+<!-- Content Starts -->
+<main>
+    <div class="container">
+        <div class="row my-5 d-flex justify-content-between">
+            <div class="col-3">
+                <h1 class="tableName">Settings</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <table class="table table-borderless">
+                    <thead>
+                        <tr>
+                            <th class="d-none">Id</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Phone</th>
+                            <th scope="col">Work Hours</th>
+                            <th scope="col">Edit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var setting in Model)
+                        {
+                            <tr>
+                                <td class="d-none">@setting.Id</td>
+                                <td>@setting.Address</td>
+                                <td>@setting.Email</td>
+                                <td>@setting.Phone</td>
+                                <td>@setting.WorkHours</td>
+                                <td>
+                                    <a href="@Url.Action("Edit","Setting",new { id = setting.Id})"><i class="far fa-edit mr-1 edit"></i></a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</main>
+<!-- Content Ends -->

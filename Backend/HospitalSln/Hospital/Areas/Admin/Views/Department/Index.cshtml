@@ -1,0 +1,95 @@
+﻿@model IEnumerable<Hospital.Models.Departments>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+@section style{
+    <title>Departments</title>
+}
+
+
+<!-- Content Starts -->
+<main>
+    <div class="container">
+        <div class="row my-5 d-flex justify-content-between">
+            <div class="col-3">
+                <h1 class="tableName">Departments</h1>
+            </div>
+            <div class="col-3 d-flex justify-content-end">
+                <a href="@Url.Action("Create","Department")"><button type="button" class="btn btn-primary create">Create</button></a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <table class="table table-borderless">
+                    <thead>
+                        <tr>
+                            <th class="d-none">Id</th>
+                            <th scope="col">Name Az</th>
+                            <th scope="col">Name Eng</th>
+                            <th scope="col">Icon</th>
+                            <th scope="col">Photo</th>
+                            <th scope="col">Description Az</th>
+                            <th scope="col">Description Eng</th>
+                            <th scope="col">Edit / Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var department in Model)
+                        {
+                            <tr>
+                                <td class="d-none">@department.Id</td>
+                                <td>@department.NameAz</td>
+                                <td>@department.NameEng</td>
+                                <td><i class="@department.Icon" style="font-size:30px;color:#0f2b51"></i></td>
+                                <td><img src="~/Uploads/Departments/@department.Photo" alt="@department.NameEng" style="width:150px;height:130px" /></td>
+                                <td>@department.DesAz</td>
+                                <td>@department.DesEng</td>
+                                <td>
+                                    <a href="@Url.Action("Edit","Department",new { id = department.Id})"><i class="far fa-edit mr-1 edit"></i></a>
+                                    <i class="fas fa-trash delete" style="cursor:pointer"></i>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</main>
+<!-- Content Ends -->
+
+
+@section script{
+    <!-- Delete AJAX Starts -->
+    <script>
+        $('.delete').click(function () {
+
+            var _this = this;
+
+            swal({
+                title: "Are you sure?",
+                text: "Once deleted, you will not be able to recover this  file!",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+                .then((willDelete) => {
+                    if (willDelete) {
+
+                        var myId = _this.parentElement.parentElement.firstElementChild.innerHTML;
+                        $.ajax({
+                            url: "Department/Delete",
+                            type: "GET",
+                            data: ({ Id: myId })
+                        });
+                        location.reload();
+                    }
+                });
+        });
+    </script>
+    <!-- Delete AJAX Ends -->
+}

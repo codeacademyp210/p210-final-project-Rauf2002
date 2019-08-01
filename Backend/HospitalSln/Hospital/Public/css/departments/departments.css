@@ -1,0 +1,48 @@
+.contactH{
+    color: #222222;
+    font-size: 44px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Departments Start */
+.cardHolder{
+    width: 17.33125rem;
+    height: 17.33125rem;
+    overflow: hidden;
+    position: relative;
+}
+.cardHolder::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: rgba(255,255,255,0.4);
+}
+.cardHolder:hover::after{
+    width: 120%;
+    background-color: rgba(255,255,255,0);
+    transition: all 0.4s ease-in-out;
+}
+.cardHolder img {
+    width: 100%;
+    height: 100%;
+    border-radius: 2px;
+    transition: 0.4s;
+}
+.depCard a {
+    color: #01579b;
+    transition: color 0.3s;
+    font-family: 'Lato',sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+}
+.depCard a:hover{
+    color: #c2185b;
+    text-decoration: none;
+}
+.cardHolder img:hover{
+    transform: scale(1.06,1.06);
+}
+/* Departments End */

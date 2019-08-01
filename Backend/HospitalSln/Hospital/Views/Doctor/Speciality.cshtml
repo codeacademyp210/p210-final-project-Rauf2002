@@ -1,0 +1,79 @@
+﻿@model Hospital.Models.ViewModelHome
+
+
+    @{
+        ViewBag.Title = "Speciality";
+        Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+    }
+
+    @section style{
+        <title>Doctors</title>
+        <link rel="stylesheet" href="~/Public/css/doctors/doctors.css" />
+    }
+
+    <!-- Content Starts -->
+    <main>
+        <!-- Background Image Starts -->
+        <section style="background-image:url('../../Public/img/global/header.jpg')" class="p-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="contactH">Doctors</h2>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Bakcground Image Ends -->
+        <!-- Doctors Start -->
+        <section>
+            <div class="container">
+                <div class="row my-5">
+                    <div class="col-12">
+                        <div class="select">
+                            <select name="slct" id="slct">
+                                <option selected disabled>Speciality</option>
+                                @foreach (var department in Model.Departments)
+                                {
+                                    <a href="@Url.Action("Speciality","Doctor",new { Id = department.Id})">
+                                        <option>@department.NameEng</option>
+                                    </a>
+                                }
+
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row flex-wrap">
+                    @foreach (var doctor in Model.Doctors)
+                    {
+                        <div class="col-md-3 col-12 mb-5">
+                            <div class="doctorCard">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <a href="@Url.Action("One","Doctor",new { Id = doctor.Id})" target="_blank">
+                                            <div class="imgHolder">
+                                                <img src="~/Uploads/Doctors/@doctor.Photo" alt="@doctor.Name @doctor.Surname">
+                                                <div class="overlay">
+                                                    <i class="fas fa-plus"></i>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="row mt-4">
+                                    <div class="col-12">
+                                        <a href="" class="doctorName">Dr. @doctor.Name @doctor.Surname</a>
+                                    </div>
+                                    <div class="col-12">
+                                        <small class="doctorSpec">@doctor.Departments.NameEng</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </section>
+        <!-- Doctors End -->
+    </main>
+    <!-- Content Ends -->

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Settings</title>
+
+    <!-- Global CSS starts -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/55ffc5f93b.js"></script>
+    <link rel="stylesheet" href="./css/global.css">
+    <!-- Fonts Start-->
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Acme&display=swap" rel="stylesheet">
+    <!-- Fonts End -->
+
+    <!-- Sweet Alert Starts-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- Sweet Alert Ends -->
+    <!-- Global CSS ends -->
+</head>
+<body>
+     <!-- Same Header Starts -->
+     <header>
+            <div class="container">
+                <div class="row d-flex justify-content-between py-4">
+                    <div class="col-4">
+                        <h2 class="adminName">Rauf Allahverdiyev</h2>
+                    </div>
+                    <div class="col-3 d-flex align-items-center justify-content-end">
+                        <a href="./settings.html"><i class="fas fa-cog" style="color:#212529;margin-right:1rem;font-size:1.5rem"></i></a>
+                        <i class="fas fa-sign-out-alt logOut"></i>
+                    </div>
+                </div>
+                <div class="row py-2">
+                    <div class="col-12">
+                        <ul class="menuUl">
+                            <li><a href="./patients.html">Patients</a></li>
+                            <li><a href="./doctors.html">Doctors</a></li>
+                            <li><a href="./nurses.html">Nurses</a></li>
+                            <li><a href="./vaccines.html">Vaccines</a></li>
+                            <li><a href="./allergies.html">Allergies</a></li>
+                            <li><a href="./departments.html">Departments</a></li>
+                            <li><a href="./inspections.html">Inspections</a></li>
+                            <li><a href="./messages.html">Messages</a></li>
+                            <li><a href="./appointments.html">Appointments</a></li>
+                            <li><a href="./gallery.html">Gallery</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Same Header Ends -->
+    
+        <!-- Content Starts -->
+        <main>
+            <div class="container">
+                <div class="row my-5 d-flex justify-content-between">
+                    <div class="col-3">
+                        <h1 class="tableName">Settings</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <table class="table table-borderless">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Address</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Phone</th>
+                                    <th scope="col">Work Hours</th>
+                                    <th scope="col">Edit</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Rauf Allahverdiyev</td>
+                                    <td>M.Hadi 136A</td>
+                                    <td>+994 50 850 75 75</td>
+                                    <td>03.09.2002</td>
+                                    <td>
+                                        <a href=""><i class="far fa-edit mr-1 edit"></i></a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- Content Ends -->
+</body>
+</html>

@@ -1,0 +1,64 @@
+﻿@model Hospital.Models.Doctors
+
+@{
+    ViewBag.Title = "One";
+}
+
+@section style{
+    <title>One</title>
+    <link href="~/Public/css/doctors/one.css" rel="stylesheet" />
+    }
+
+<!-- Content Starts -->
+<main>
+    <!-- Background Image Starts -->
+    <section style="background-image:url('../../Public/img/global/header.jpg')" class="p-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="contactH">Doctors</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Bakcground Image Ends -->
+
+    <section>
+        <div class="container">
+            <div class="row my-5">
+                <div class="col-md-4 col-12">
+                    <div class="imgHolder">
+                        <img src="~/Uploads/Doctors/@Model.Photo" alt="@Model.Name @Model.Surname">
+                    </div>
+                </div>
+                <div class="col-md-8 col-12 pl-5">
+                    <div class="row">
+                        <div class="col-12">
+                            <h1 class="oneH">Dr. @Model.Name @Model.Surname</h1>
+                        </div>
+                        <div class="col-12">
+                            <small class="doctorSpec">@Model.Departments.NameEng</small>
+                        </div>
+                        <div class="col-12 my-3">
+                            <p style="color:#555555">
+                                @Model.DesEng
+                            </p>
+                        </div>
+                        <div class="col-12">
+                            <ul class="oneUl">
+                                <li><i class="fas fa-envelope"></i> Hospital@Hospital.com</li>
+                                <li><i class="fas fa-phone"></i> +333 444 55 66</li>
+                            </ul>
+                        </div>
+                        <div class="col-12 mt-5">
+                            <div class="schedule">
+                                <a href="@Url.Action("Schedule","Doctor",new { Id = Model.Id})">View Dr. @Model.Name @Model.Surname's Schedule</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<!-- Content Ends -->

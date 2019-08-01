@@ -1,0 +1,105 @@
+.contactH{
+    color: #222222;
+    font-size: 44px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Reset Select */
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    outline: 0;
+    box-shadow: none;
+    border: 0 !important;
+    background: #2c3e50;
+    background-image: none;
+  }
+  /* Remove IE arrow */
+  select::-ms-expand {
+    display: none;
+  }
+  /* Custom Select */
+  .select {
+    position: relative;
+    display: flex;
+    width: 20em;
+    height: 3em;
+    line-height: 3;
+    background: #2c3e50;
+    overflow: hidden;
+    border-radius: .25em;
+  }
+  select {
+    flex: 1;
+    padding: 0 .5em;
+    color: #fff;
+    cursor: pointer;
+  }
+  /* Arrow */
+  .select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 1em;
+    background: #34495e;
+    cursor: pointer;
+    pointer-events: none;
+    -webkit-transition: .25s all ease;
+    -o-transition: .25s all ease;
+    transition: .25s all ease;
+  }
+  /* Transition */
+  .select:hover::after {
+    color: #f39c12;
+  }
+
+/* Doctors Start */
+.imgHolder{
+    position: relative;
+}
+.imgHolder img {
+    width: 100%;
+    height: 100%;
+    border-radius: 2px;
+}
+.overlay{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2222229d;
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+}
+.overlay i {
+    font-size: 2.5rem;
+    color: white;
+}
+.imgHolder:hover .overlay{
+    opacity: 1;
+}
+.doctorName{
+    font-weight: 600;
+    font-family: 'Lato',sans-serif;
+    color: #01579b ;
+    transition: color 0.4s;
+    font-size: 18px;
+}
+.doctorName:hover{
+    color: #c2185b;
+    text-decoration: none;
+}
+.doctorSpec{
+    color: #aaaaaa;
+    font-family: 'Lato',sans-serif;
+    font-size: 14px;
+    font-style: italic;
+}
+/* Doctors End */

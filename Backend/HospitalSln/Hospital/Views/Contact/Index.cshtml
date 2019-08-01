@@ -1,0 +1,129 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+@section style{
+    <title>Contact</title>
+    <link href="~/Public/css/contact/contact.css" rel="stylesheet" />
+}
+
+<!-- Content Starts -->
+<main>
+    <!-- Background Image Starts -->
+    <section style="background-image:url('../../Public/img/global/header.jpg')" class="p-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="contactH">Contact</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Bakcground Image Ends -->
+    <!-- Map Starts -->
+    <section>
+        <div class="container">
+            <div class="row my-5">
+                <div class="col-12">
+                    <div class="mapouter">
+                        <div class="gmap_canvas">
+                            <iframe width="1300" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=Davis&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                                    frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                            <a href="https://www.embedgooglemap.net/blog/best-wordpress-themes/">embedgooglemap.net</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Map Ends -->
+
+    <section class="mb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 col-12">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="touchH">
+                                Get in touch
+                            </h2>
+                        </div>
+                        <div class="col-12">
+                            <p style="color:#555555;font-family:'Lato',sans-serif">
+                                This is Herman Brooks. Herman is
+                                just like the rest of us. Everyday he has to make
+                                all kinds of decisions like what to wear, whom to date and when to panic.
+                            </p>
+                        </div>
+                        <div class="col-12">
+                            <p style="color:#555555;font-family:'Lato',sans-serif">
+                                Now these decisions should be easy but if you take a look inside Herman’s head,
+                                you’ll see why he sometimes has trouble making up his mind. Sometimes they agree…
+                                usually they don’t. But the struggle is going on inside all of us and it’s all
+                                going on inside Herman’s head.
+                            </p>
+                        </div>
+                        <div class="col-12 mt-5 mb-2">
+                            <h4 class="infoH">Contact <strong>INFO</strong></h4>
+                        </div>
+                        <div class="col-12 contactDetails">
+                            <ul>
+                                <li><i class="fas fa-envelope"></i> Hospital@Hospital.com</li>
+                                <li><i class="fas fa-phone"></i> +333 444 55 66</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-7">
+                    <!-- User Message Starts -->
+                    <form  onsubmit="return validateForm()"  method="POST" action="@Url.Action("Create","Message")">
+                        @Html.AntiForgeryToken()
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" class="form-control" id="name" placeholder="Name" name="Name">
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="email">Email address</label>
+                                <input type="email" class="form-control" id="email" placeholder="Email" name="Email">
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="phone">Phone number</label>
+                                <input type="text" class="form-control" id="phone" placeholder="Phone" name="Phone">
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea name="Message" id="message"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="submit">SUBMIT</button>
+                        </div>
+                    </form>
+                    <!-- User Message Ends -->
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<!-- Content Ends -->
+
+
+@section script{
+    <!-- CKEditor Starts -->
+    <script src="https://cdn.ckeditor.com/4.12.1/standard/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace('Message');
+    </script>
+    <!-- CKEditoor Ends -->
+    <!-- Page Level JS Starts -->
+    <script src="~/Public/js/contact/contact.js"></script>
+    <!-- Page Level JS Ends -->
+}
