@@ -10,52 +10,50 @@ using Hospital.Models;
 
 namespace Hospital.Areas.Admin.Controllers
 {
-    public class InspectionController : Controller
+    public class PatientController : Controller
     {
         private HospitalEntities db = new HospitalEntities();
 
-        // GET: Admin/Inspection
+        // GET: Admin/Patient
         public ActionResult Index()
         {
             if (Session["isLogin"] != null && (bool)Session["isLogin"] == true)
             {
-                var inspections = db.Inspections.Include(i => i.Doctors);
-                return View(inspections.ToList());
+                return View(db.Patients.ToList());
             }
             return RedirectToAction("Index", "Login");
         }
 
 
-        // GET: Admin/Inspection/Create
+
+        // GET: Admin/Patient/Create
         public ActionResult Create()
         {
             if (Session["isLogin"] != null && (bool)Session["isLogin"] == true)
             {
-                ViewBag.DoctorId = new SelectList(db.Doctors, "Id", "Name");
                 return View();
             }
             return RedirectToAction("Index", "Login");
         }
 
-        // POST: Admin/Inspection/Create
+        // POST: Admin/Patient/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,Price,DoctorId")] Inspections inspections)
+        public ActionResult Create([Bind(Include = "Id,Name,Surname,Phone,Address,Birthday")] Patients patients)
         {
             if (ModelState.IsValid)
             {
-                db.Inspections.Add(inspections);
+                db.Patients.Add(patients);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.DoctorId = new SelectList(db.Doctors, "Id", "Name", inspections.DoctorId);
-            return View(inspections);
+            return View(patients);
         }
 
-        // GET: Admin/Inspection/Edit/5
+        // GET: Admin/Patient/Edit/5
         public ActionResult Edit(int? id)
         {
             if (Session["isLogin"] != null && (bool)Session["isLogin"] == true)
@@ -64,41 +62,39 @@ namespace Hospital.Areas.Admin.Controllers
                 {
                     return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
                 }
-                Inspections inspections = db.Inspections.Find(id);
-                if (inspections == null)
+                Patients patients = db.Patients.Find(id);
+                if (patients == null)
                 {
                     return HttpNotFound();
                 }
-                ViewBag.DoctorId = new SelectList(db.Doctors, "Id", "Name", inspections.DoctorId);
-                return View(inspections);
+                return View(patients);
             }
             return RedirectToAction("Index", "Login");
         }
 
-        // POST: Admin/Inspection/Edit/5
+        // POST: Admin/Patient/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,Price,DoctorId")] Inspections inspections)
+        public ActionResult Edit([Bind(Include = "Id,Name,Surname,Phone,Address,Birthday")] Patients patients)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(inspections).State = EntityState.Modified;
+                db.Entry(patients).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.DoctorId = new SelectList(db.Doctors, "Id", "Name", inspections.DoctorId);
-            return View(inspections);
+            return View(patients);
         }
 
         public ActionResult Delete(int Id)
         {
-            Models.Inspections foundInspection = db.Inspections.FirstOrDefault(i => i.Id == Id);
+            Models.Patients foundPatient = db.Patients.FirstOrDefault(p => p.Id == Id);
 
-            if (foundInspection != null)
+            if (foundPatient != null)
             {
-                db.Inspections.Remove(foundInspection);
+                db.Patients.Remove(foundPatient);
                 db.SaveChanges();
             }
             else

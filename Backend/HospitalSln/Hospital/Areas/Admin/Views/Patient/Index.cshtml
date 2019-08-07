@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Hospital.Models.Vaccines>
+﻿@model IEnumerable<Hospital.Models.Patients>
 
 @{
     ViewBag.Title = "Index";
@@ -6,7 +6,7 @@
 }
 
 @section style{
-    <title>Vaccines</title>
+    <title>Patients</title>
 }
 
 
@@ -15,10 +15,10 @@
     <div class="container">
         <div class="row my-5 d-flex justify-content-between">
             <div class="col-3">
-                <h1 class="tableName">Vaccines</h1>
+                <h1 class="tableName">Patients</h1>
             </div>
             <div class="col-3 d-flex justify-content-end">
-                <a href="@Url.Action("Create","Vaccine")"><button type="button" class="btn btn-primary create">Create</button></a>
+                <a href="@Url.Action("Create","Patient")"><button type="button" class="btn btn-primary create">Create</button></a>
             </div>
         </div>
         <div class="row">
@@ -27,7 +27,12 @@
                     <thead>
                         <tr>
                             <th scope="col">Name</th>
-                            <th>Edit / Delete</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">Phone</th>
+                            <th scope="col">Birthday</th>
+                            <th scope="col">Inspection Date</th>
+                            <th scope="col">Payment</th>
+                            <th scope="col">Edit / Delete</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -35,9 +40,14 @@
                         {
                             <tr>
                                 <td class="d-none">@item.Id</td>
-                                <td>@item.Name</td>
+                                <td>@item.Name @item.Surname</td>
+                                <td>@item.Address</td>
+                                <td>@item.Phone</td>
+                                <td>@item.Birthday</td>
+                                <td>@item.InspectionDate</td>
+                                <td>@item.Payment</td>
                                 <td>
-                                    <a href="@Url.Action("Edit","Vaccine",new { id = item.Id})"><i class="far fa-edit mr-1 edit"></i></a>
+                                    <a href="@Url.Action("Edit","Patient",new { id = item.Id})"><i class="far fa-edit mr-1 edit"></i></a>
                                     <i class="fas fa-trash delete" style="cursor:pointer"></i>
                                 </td>
                             </tr>
@@ -49,7 +59,6 @@
     </div>
 </main>
 <!-- Content Ends -->
-
 
 @section script{
     <!-- Delete AJAX Starts -->
@@ -70,7 +79,7 @@
 
                         var myId = _this.parentElement.parentElement.firstElementChild.innerHTML;
                         $.ajax({
-                            url: "Vaccine/Delete",
+                            url: "Patient/Delete",
                             type: "GET",
                             data: ({ Id: myId })
                         });

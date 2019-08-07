@@ -41,14 +41,11 @@ namespace Hospital.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name")] Vaccines vaccines,int allergyId)
+        public ActionResult Create([Bind(Include = "Id,Name")] Vaccines vaccines)
         {
             if (ModelState.IsValid)
             {
-                Models.AllergiesVaccines av = new Models.AllergiesVaccines();
                 db.Vaccines.Add(vaccines);
-                av.VaccineId = vaccines.Id;
-                av.AllergyId = allergyId;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -91,6 +88,21 @@ namespace Hospital.Areas.Admin.Controllers
             return View(vaccines);
         }
 
+        public ActionResult Delete(int Id)
+        {
+            Models.Vaccines foundVaccine = db.Vaccines.FirstOrDefault(v => v.Id == Id);
+
+            if (foundVaccine != null)
+            {
+                db.Vaccines.Remove(foundVaccine);
+                db.SaveChanges();
+            }
+            else
+            {
+                return HttpNotFound();
+            }
+            return RedirectToAction("Index");
+        }
 
         protected override void Dispose(bool disposing)
         {

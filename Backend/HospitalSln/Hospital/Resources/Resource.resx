@@ -192,4 +192,52 @@
   <data name="WhenItComes" xml:space="preserve">
     <value>When It Comes to Health Care</value>
   </data>
+  <data name="Date" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="DoctorSchedule" xml:space="preserve">
+    <value>Doctor Schedule</value>
+  </data>
+  <data name="EmailAddress" xml:space="preserve">
+    <value>Email Address</value>
+  </data>
+  <data name="FullName" xml:space="preserve">
+    <value>Full Name</value>
+  </data>
+  <data name="GetInTouch" xml:space="preserve">
+    <value>Get in touch</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="Message" xml:space="preserve">
+    <value>Message</value>
+  </data>
+  <data name="ViewProfile" xml:space="preserve">
+    <value>View Profile</value>
+  </data>
+  <data name="Wheaties" xml:space="preserve">
+    <value>Have you tried Wheaties? They’re whole wheat with all of the bran.
+                        Won’t
+                        you try Wheaties? For wheat is the best food of man. They’re crispy and crunchy the whole
+                        year
+                        through, The kiddies never tire of them and neither will you. So just try Wheaties, the
+                        best
+                        breakfast food in the land!</value>
+  </data>
+  <data name="NoAppointment" xml:space="preserve">
+    <value>This Doctor Has No Appointment</value>
+  </data>
+  <data name="ph1" xml:space="preserve">
+    <value>This is the subtitle for the heading</value>
+  </data>
+  <data name="ph2" xml:space="preserve">
+    <value>Patients have an important role to play at each stage of their care and the five safety tips will serve to encourage them to be more involved in their health care.</value>
+  </data>
+  <data name="ph3" xml:space="preserve">
+    <value>Patients can do a lot of small things to make their health-care experience as safe as possible.</value>
+  </data>
+  <data name="ph4" xml:space="preserve">
+    <value>Hospitals are places of recovery and healing but there are also safety risks for patients, such as infections, falls and medication errors that can happen despite our best efforts.</value>
+  </data>
 </root>

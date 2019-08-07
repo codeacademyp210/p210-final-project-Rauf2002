@@ -14,31 +14,14 @@ namespace Hospital.Models
     
     public partial class Patients
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Patients()
-        {
-            this.PatientsAllergies = new HashSet<PatientsAllergies>();
-            this.PatientsDoctors = new HashSet<PatientsDoctors>();
-            this.PatientsVaccines = new HashSet<PatientsVaccines>();
-        }
-    
         public int Id { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
         public string Phone { get; set; }
         public string Address { get; set; }
+        public int Payment { get; set; }
+        public DateTime InspectionDate { get; set; }
         public Nullable<System.DateTime> Birthday { get; set; }
-        public Nullable<int> InspectionId { get; set; }
-        public Nullable<System.DateTime> InspectedDate { get; set; }
-        public Nullable<System.DateTime> NextInspection { get; set; }
-        public Nullable<int> PaidAmount { get; set; }
-    
-        public virtual Inspections Inspections { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PatientsAllergies> PatientsAllergies { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PatientsDoctors> PatientsDoctors { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PatientsVaccines> PatientsVaccines { get; set; }
+
     }
 }

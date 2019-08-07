@@ -5,13 +5,12 @@
 }
 
 @section style{
-    <title>Home</title>
+    <title>@Hospital.Resources.Resource.Home</title>
     <link rel="stylesheet" href="~/Public/css/index/index.css" />
 }
 
 <!-- Content Starts -->
 <main>
-    <input class="d-none" value="@ViewBag.cult"/>
     <section>
         <div class="slider">
             <div class="slider-container">
@@ -38,7 +37,7 @@
                     <h3 class="appointmentH">@Hospital.Resources.Resource.BookAppointment</h3>
                 </div>
             </div>
-            <form   onsubmit="return validateForm()"  method="POST"  action="@Url.Action("Create","Appointment")"  >
+            <form onsubmit="return validateForm()" method="POST" action="@Url.Action("Create","Appointment")">
                 @Html.AntiForgeryToken()
                 <div class="row flex-wrap pb-5">
                     <div class="col-md-4 col-12">
@@ -77,7 +76,14 @@
                             <select name="DoctorId" class="form-control" id="doctor">
                                 @foreach (var doctor in Model.Doctors)
                                 {
-                                    <option value="@doctor.Id">@doctor.Name @doctor.Surname (@doctor.Departments.NameEng)</option>
+                                    if (ViewBag.cult == "en")
+                                    {
+                                        <option value="@doctor.Id">@doctor.Name @doctor.Surname (@doctor.Departments.NameEng)</option>
+                                    }
+                                    else if (ViewBag.cult == "az")
+                                    {
+                                        <option value="@doctor.Id">@doctor.Name @doctor.Surname (@doctor.Departments.NameAz)</option>
+                                    }
                                 }
                             </select>
                         </div>
@@ -186,7 +192,7 @@
                                             <div class="top">
                                                 <h3>@doctor.Name @doctor.Surname</h3>
 
-                                                
+
                                             </div>
                                             <span class="border"></span>
                                             <div class="bottom">
@@ -203,7 +209,16 @@
                                 </div>
                                 <div class="text-holder">
                                     <h3>@doctor.Name @doctor.Surname</h3>
-                                    <span>@doctor.Departments.NameEng</span>
+                                    <span>
+                                        @if (ViewBag.cult == "en")
+                                        {
+                                            @doctor.Departments.NameEng
+                                        }
+                                        else if (ViewBag.cult == "az")
+                                        {
+                                            @doctor.Departments.NameAz
+                                        }
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -291,30 +306,25 @@
                             <h3 class="white">@Hospital.Resources.Resource.OurPhilosophy</h3>
                         </div>
                         <div class="col-12 mt-3">
-                            <h4 class="whiteDesc">This is the subtitle for the heading</h4>
+                            <h4 class="whiteDesc">@Hospital.Resources.Resource.ph1</h4>
                         </div>
                         <div class="col-12 my-3">
                             <p class="text-white">
-                                Patients have an important role to play at each stage of their
-                                care and the five safety tips will serve to encourage them to be more involved in
-                                their health care.
+                                @Hospital.Resources.Resource.ph2
                             </p>
                         </div>
                         <div class="col-12 my-3">
                             <p class="text-white">
-                                Patients can do a lot of small things to make their health-care
-                                experience as safe as possible.
+                                @Hospital.Resources.Resource.ph3
                             </p>
                         </div>
                         <div class="col-12 my-3">
                             <p class="text-white">
-                                Hospitals are places of recovery and healing but there are also
-                                safety risks for patients, such as infections, falls and medication errors that can
-                                happen despite our best efforts.
+                                @Hospital.Resources.Resource.ph4
                             </p>
                         </div>
                         <div class="col-12 mt-3">
-                            <button class="philosphy">Learn More</button>
+                            <button class="philosphy">@Hospital.Resources.Resource.ReadMore</button>
                         </div>
                     </div>
                 </div>
@@ -340,10 +350,20 @@
                                     <i class="@department.Icon depIcon"></i>
                                 </div>
                                 <div class="text-holder">
-                                    <h3>@department.NameEng</h3>
-                                    <p>
-                                        @department.DesEng
-                                    </p>
+                                    @if (ViewBag.cult == "en")
+                                    {
+                                        <h3>@department.NameEng</h3>
+                                        <p>
+                                            @department.DesEng
+                                        </p>
+                                    }
+                                    else if (ViewBag.cult == "az")
+                                    {
+                                        <h3>@department.NameAz</h3>
+                                        <p>
+                                            @department.DesAz
+                                        </p>
+                                    }
                                 </div>
                                 <a class="readmore" target="_blank" href="@Url.Action("One","Department",new { Id = department.Id})">@Hospital.Resources.Resource.ReadMore</a>
                             </div>

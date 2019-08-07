@@ -5,7 +5,7 @@
 }
 
 @section style{
-    <title>Doctors</title>
+    <title>@Hospital.Resources.Resource.Doctors</title>
     <link rel="stylesheet" href="~/Public/css/doctors/doctors.css" />
 }
 
@@ -16,7 +16,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <h2 class="contactH">Doctors</h2>
+                    <h2 class="contactH">@Hospital.Resources.Resource.Doctors</h2>
                 </div>
             </div>
         </div>
@@ -29,10 +29,22 @@
                 <div class="col-12">
                     <div class="select">
                         <select name="slct" id="slct">
-                            <option selected disabled>Speciality</option>
+                            <option selected disabled>@Hospital.Resources.Resource.Departments</option>
                             @foreach (var department in Model.Departments)
                             {
-                                <option><a href="@Url.Action("Speciality","Doctor",new { Id = department.Id})">@department.NameEng </a></option>
+                                <option class="departmentOption">
+                                    <p>@department.Id</p>
+                                    <p>
+                                        @if (ViewBag.cult == "en")
+                                        {
+                                            @department.NameEng
+                                        }
+                                        else if (ViewBag.cult == "az")
+                                        {
+                                            @department.NameAz
+                                        }
+                                    </p>
+                                </option>
                             }
 
                         </select>
@@ -61,7 +73,16 @@
                                     <a href="" class="doctorName">Dr. @doctor.Name @doctor.Surname</a>
                                 </div>
                                 <div class="col-12">
-                                    <small class="doctorSpec">@doctor.Departments.NameEng</small>
+                                    <small class="doctorSpec">
+                                        @if (ViewBag.cult == "en")
+                                        {
+                                            @doctor.Departments.NameEng
+                                        }
+                                        else if (ViewBag.cult == "az")
+                                        {
+                                            @doctor.Departments.NameAz
+                                        }
+                                    </small>
                                 </div>
                             </div>
                         </div>
@@ -73,3 +94,38 @@
     <!-- Doctors End -->
 </main>
 <!-- Content Ends -->
+
+@section script{
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+
+        $('.departmentOption').click(function () {
+
+            var _this = this;
+            console.log("asdadasdasdasd");
+
+
+            //swal({
+            //    title: "Are you sure?",
+            //    text: "Once deleted, you will not be able to recover this  file!",
+            //    icon: "warning",
+            //    buttons: true,
+            //    dangerMode: true,
+            //})
+            //    .then((willDelete) => {
+            //        if (willDelete) {
+
+            //            var myId = _this.parentElement.parentElement.firstElementChild.innerHTML;
+            //            $.ajax({
+            //                url: "Nurse/Delete",
+            //                type: "GET",
+            //                data: ({ Id: myId })
+            //            });
+            //            location.reload();
+            //        }
+            //    });
+        });
+
+    </script>
+
+}

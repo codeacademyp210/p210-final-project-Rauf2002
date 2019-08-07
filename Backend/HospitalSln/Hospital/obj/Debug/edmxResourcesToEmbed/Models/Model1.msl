@@ -20,15 +20,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="AllergiesVaccines">
-      <EntityTypeMapping TypeName="HospitalModel.AllergiesVaccines">
-        <MappingFragment StoreEntitySet="AllergiesVaccines">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="AllergyId" ColumnName="AllergyId" />
-          <ScalarProperty Name="VaccineId" ColumnName="VaccineId" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Appointments">
       <EntityTypeMapping TypeName="HospitalModel.Appointments">
         <MappingFragment StoreEntitySet="Appointments">
@@ -81,16 +72,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Inspections">
-      <EntityTypeMapping TypeName="HospitalModel.Inspections">
-        <MappingFragment StoreEntitySet="Inspections">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Price" ColumnName="Price" />
-          <ScalarProperty Name="DoctorId" ColumnName="DoctorId" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Messages">
       <EntityTypeMapping TypeName="HospitalModel.Messages">
         <MappingFragment StoreEntitySet="Messages">
@@ -120,43 +101,14 @@
     <EntitySetMapping Name="Patients">
       <EntityTypeMapping TypeName="HospitalModel.Patients">
         <MappingFragment StoreEntitySet="Patients">
+          <ScalarProperty Name="InspectionDate" ColumnName="InspectionDate" />
+          <ScalarProperty Name="Payment" ColumnName="Payment" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Surname" ColumnName="Surname" />
           <ScalarProperty Name="Phone" ColumnName="Phone" />
           <ScalarProperty Name="Address" ColumnName="Address" />
           <ScalarProperty Name="Birthday" ColumnName="Birthday" />
-          <ScalarProperty Name="InspectionId" ColumnName="InspectionId" />
-          <ScalarProperty Name="InspectedDate" ColumnName="InspectedDate" />
-          <ScalarProperty Name="NextInspection" ColumnName="NextInspection" />
-          <ScalarProperty Name="PaidAmount" ColumnName="PaidAmount" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="PatientsAllergies">
-      <EntityTypeMapping TypeName="HospitalModel.PatientsAllergies">
-        <MappingFragment StoreEntitySet="PatientsAllergies">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="AllergyId" ColumnName="AllergyId" />
-          <ScalarProperty Name="PatientId" ColumnName="PatientId" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="PatientsDoctors">
-      <EntityTypeMapping TypeName="HospitalModel.PatientsDoctors">
-        <MappingFragment StoreEntitySet="PatientsDoctors">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="DoctorId" ColumnName="DoctorId" />
-          <ScalarProperty Name="PatientId" ColumnName="PatientId" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="PatientsVaccines">
-      <EntityTypeMapping TypeName="HospitalModel.PatientsVaccines">
-        <MappingFragment StoreEntitySet="PatientsVaccines">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="VaccineId" ColumnName="VaccineId" />
-          <ScalarProperty Name="PatientId" ColumnName="PatientId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

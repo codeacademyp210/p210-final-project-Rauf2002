@@ -17,14 +17,6 @@
     <Property Name="NameAz" Type="nvarchar" MaxLength="255" />
     <Property Name="NameEng" Type="nvarchar" MaxLength="255" />
   </EntityType>
-  <EntityType Name="AllergiesVaccines">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="AllergyId" Type="int" />
-    <Property Name="VaccineId" Type="int" />
-  </EntityType>
   <EntityType Name="Appointments">
     <Key>
       <PropertyRef Name="Id" />
@@ -73,15 +65,6 @@
     <Property Name="NameEng" Type="nvarchar" MaxLength="255" />
     <Property Name="Photo" Type="nvarchar" MaxLength="255" />
   </EntityType>
-  <EntityType Name="Inspections">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="nvarchar" MaxLength="255" />
-    <Property Name="Price" Type="int" />
-    <Property Name="DoctorId" Type="int" />
-  </EntityType>
   <EntityType Name="Messages">
     <Key>
       <PropertyRef Name="Id" />
@@ -116,34 +99,8 @@
     <Property Name="Phone" Type="nvarchar" MaxLength="255" />
     <Property Name="Address" Type="nvarchar" MaxLength="255" />
     <Property Name="Birthday" Type="date" />
-    <Property Name="InspectionId" Type="int" />
-    <Property Name="InspectedDate" Type="date" />
-    <Property Name="NextInspection" Type="date" />
-    <Property Name="PaidAmount" Type="int" />
-  </EntityType>
-  <EntityType Name="PatientsAllergies">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="AllergyId" Type="int" />
-    <Property Name="PatientId" Type="int" />
-  </EntityType>
-  <EntityType Name="PatientsDoctors">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="DoctorId" Type="int" />
-    <Property Name="PatientId" Type="int" />
-  </EntityType>
-  <EntityType Name="PatientsVaccines">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="VaccineId" Type="int" />
-    <Property Name="PatientId" Type="int" />
+    <Property Name="Payment" Type="int" />
+    <Property Name="InspectionDate" Type="date" />
   </EntityType>
   <EntityType Name="Settings">
     <Key>
@@ -162,30 +119,6 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Name" Type="nvarchar" MaxLength="255" />
   </EntityType>
-  <Association Name="FK__Allergies__Aller__5535A963">
-    <End Role="Allergies" Type="Self.Allergies" Multiplicity="0..1" />
-    <End Role="AllergiesVaccines" Type="Self.AllergiesVaccines" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Allergies">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="AllergiesVaccines">
-        <PropertyRef Name="AllergyId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__Allergies__Vacci__5629CD9C">
-    <End Role="Vaccines" Type="Self.Vaccines" Multiplicity="0..1" />
-    <End Role="AllergiesVaccines" Type="Self.AllergiesVaccines" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Vaccines">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="AllergiesVaccines">
-        <PropertyRef Name="VaccineId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK__Appointme__Depar__48CFD27E">
     <End Role="Departments" Type="Self.Departments" Multiplicity="0..1" />
     <End Role="Appointments" Type="Self.Appointments" Multiplicity="*" />
@@ -222,18 +155,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Inspectio__Docto__4BAC3F29">
-    <End Role="Doctors" Type="Self.Doctors" Multiplicity="0..1" />
-    <End Role="Inspections" Type="Self.Inspections" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Doctors">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Inspections">
-        <PropertyRef Name="DoctorId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK__Nurses__Departme__44FF419A">
     <End Role="Departments" Type="Self.Departments" Multiplicity="0..1" />
     <End Role="Nurses" Type="Self.Nurses" Multiplicity="*" />
@@ -258,115 +179,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Patients__Inspec__52593CB8">
-    <End Role="Inspections" Type="Self.Inspections" Multiplicity="0..1" />
-    <End Role="Patients" Type="Self.Patients" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Inspections">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Patients">
-        <PropertyRef Name="InspectionId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__PatientsA__Aller__59063A47">
-    <End Role="Allergies" Type="Self.Allergies" Multiplicity="0..1" />
-    <End Role="PatientsAllergies" Type="Self.PatientsAllergies" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Allergies">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="PatientsAllergies">
-        <PropertyRef Name="AllergyId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__PatientsA__Patie__59FA5E80">
-    <End Role="Patients" Type="Self.Patients" Multiplicity="0..1" />
-    <End Role="PatientsAllergies" Type="Self.PatientsAllergies" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Patients">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="PatientsAllergies">
-        <PropertyRef Name="PatientId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__PatientsD__Docto__60A75C0F">
-    <End Role="Doctors" Type="Self.Doctors" Multiplicity="0..1" />
-    <End Role="PatientsDoctors" Type="Self.PatientsDoctors" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Doctors">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="PatientsDoctors">
-        <PropertyRef Name="DoctorId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__PatientsD__Patie__619B8048">
-    <End Role="Patients" Type="Self.Patients" Multiplicity="0..1" />
-    <End Role="PatientsDoctors" Type="Self.PatientsDoctors" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Patients">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="PatientsDoctors">
-        <PropertyRef Name="PatientId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__PatientsV__Patie__5DCAEF64">
-    <End Role="Patients" Type="Self.Patients" Multiplicity="0..1" />
-    <End Role="PatientsVaccines" Type="Self.PatientsVaccines" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Patients">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="PatientsVaccines">
-        <PropertyRef Name="PatientId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__PatientsV__Vacci__5CD6CB2B">
-    <End Role="Vaccines" Type="Self.Vaccines" Multiplicity="0..1" />
-    <End Role="PatientsVaccines" Type="Self.PatientsVaccines" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Vaccines">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="PatientsVaccines">
-        <PropertyRef Name="VaccineId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <EntityContainer Name="HospitalModelStoreContainer">
     <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Allergies" EntityType="Self.Allergies" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="AllergiesVaccines" EntityType="Self.AllergiesVaccines" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Appointments" EntityType="Self.Appointments" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Departments" EntityType="Self.Departments" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Doctors" EntityType="Self.Doctors" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Gallery" EntityType="Self.Gallery" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Inspections" EntityType="Self.Inspections" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Messages" EntityType="Self.Messages" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Nurses" EntityType="Self.Nurses" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Patients" EntityType="Self.Patients" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="PatientsAllergies" EntityType="Self.PatientsAllergies" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="PatientsDoctors" EntityType="Self.PatientsDoctors" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="PatientsVaccines" EntityType="Self.PatientsVaccines" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Settings" EntityType="Self.Settings" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Vaccines" EntityType="Self.Vaccines" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__Allergies__Aller__5535A963" Association="Self.FK__Allergies__Aller__5535A963">
-      <End Role="Allergies" EntitySet="Allergies" />
-      <End Role="AllergiesVaccines" EntitySet="AllergiesVaccines" />
-    </AssociationSet>
-    <AssociationSet Name="FK__Allergies__Vacci__5629CD9C" Association="Self.FK__Allergies__Vacci__5629CD9C">
-      <End Role="Vaccines" EntitySet="Vaccines" />
-      <End Role="AllergiesVaccines" EntitySet="AllergiesVaccines" />
-    </AssociationSet>
     <AssociationSet Name="FK__Appointme__Depar__48CFD27E" Association="Self.FK__Appointme__Depar__48CFD27E">
       <End Role="Departments" EntitySet="Departments" />
       <End Role="Appointments" EntitySet="Appointments" />
@@ -379,10 +203,6 @@
       <End Role="Departments" EntitySet="Departments" />
       <End Role="Doctors" EntitySet="Doctors" />
     </AssociationSet>
-    <AssociationSet Name="FK__Inspectio__Docto__4BAC3F29" Association="Self.FK__Inspectio__Docto__4BAC3F29">
-      <End Role="Doctors" EntitySet="Doctors" />
-      <End Role="Inspections" EntitySet="Inspections" />
-    </AssociationSet>
     <AssociationSet Name="FK__Nurses__Departme__44FF419A" Association="Self.FK__Nurses__Departme__44FF419A">
       <End Role="Departments" EntitySet="Departments" />
       <End Role="Nurses" EntitySet="Nurses" />
@@ -390,34 +210,6 @@
     <AssociationSet Name="FK__Nurses__DoctorId__440B1D61" Association="Self.FK__Nurses__DoctorId__440B1D61">
       <End Role="Doctors" EntitySet="Doctors" />
       <End Role="Nurses" EntitySet="Nurses" />
-    </AssociationSet>
-    <AssociationSet Name="FK__Patients__Inspec__52593CB8" Association="Self.FK__Patients__Inspec__52593CB8">
-      <End Role="Inspections" EntitySet="Inspections" />
-      <End Role="Patients" EntitySet="Patients" />
-    </AssociationSet>
-    <AssociationSet Name="FK__PatientsA__Aller__59063A47" Association="Self.FK__PatientsA__Aller__59063A47">
-      <End Role="Allergies" EntitySet="Allergies" />
-      <End Role="PatientsAllergies" EntitySet="PatientsAllergies" />
-    </AssociationSet>
-    <AssociationSet Name="FK__PatientsA__Patie__59FA5E80" Association="Self.FK__PatientsA__Patie__59FA5E80">
-      <End Role="Patients" EntitySet="Patients" />
-      <End Role="PatientsAllergies" EntitySet="PatientsAllergies" />
-    </AssociationSet>
-    <AssociationSet Name="FK__PatientsD__Docto__60A75C0F" Association="Self.FK__PatientsD__Docto__60A75C0F">
-      <End Role="Doctors" EntitySet="Doctors" />
-      <End Role="PatientsDoctors" EntitySet="PatientsDoctors" />
-    </AssociationSet>
-    <AssociationSet Name="FK__PatientsD__Patie__619B8048" Association="Self.FK__PatientsD__Patie__619B8048">
-      <End Role="Patients" EntitySet="Patients" />
-      <End Role="PatientsDoctors" EntitySet="PatientsDoctors" />
-    </AssociationSet>
-    <AssociationSet Name="FK__PatientsV__Patie__5DCAEF64" Association="Self.FK__PatientsV__Patie__5DCAEF64">
-      <End Role="Patients" EntitySet="Patients" />
-      <End Role="PatientsVaccines" EntitySet="PatientsVaccines" />
-    </AssociationSet>
-    <AssociationSet Name="FK__PatientsV__Vacci__5CD6CB2B" Association="Self.FK__PatientsV__Vacci__5CD6CB2B">
-      <End Role="Vaccines" EntitySet="Vaccines" />
-      <End Role="PatientsVaccines" EntitySet="PatientsVaccines" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

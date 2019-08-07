@@ -14,20 +14,8 @@ namespace Hospital.Models
     
     public partial class Allergies
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Allergies()
-        {
-            this.AllergiesVaccines = new HashSet<AllergiesVaccines>();
-            this.PatientsAllergies = new HashSet<PatientsAllergies>();
-        }
-    
         public int Id { get; set; }
         public string NameAz { get; set; }
         public string NameEng { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<AllergiesVaccines> AllergiesVaccines { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PatientsAllergies> PatientsAllergies { get; set; }
     }
 }

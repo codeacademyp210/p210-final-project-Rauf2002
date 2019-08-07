@@ -16,7 +16,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <h2 class="contactH">Departments</h2>
+                    <h2 class="contactH">@Hospital.Resources.Resource.Departments</h2>
                 </div>
             </div>
         </div>
@@ -34,12 +34,26 @@
                 <div class="col-md-8 col-12 pl-5">
                     <div class="row">
                         <div class="col-12">
-                            <h1 class="oneH">@Model.NameEng</h1>
+                            <h1 class="oneH">@if (ViewBag.cult == "en")
+                            {
+                                @Model.NameEng
+                            }
+                            else if (ViewBag.cult == "az")
+                            {
+                                @Model.NameAz
+                            }</h1>
                         </div>
                         <div class="col-12 my-3">
                             <p style="color:#555555">
-                                @Model.DesEng
-                            </p>
+                                @if (ViewBag.cult == "en")
+                                {
+                                    @Model.DesEng
+                                }
+                                else if (ViewBag.cult == "az")
+                                {
+                                    @Model.DesAz
+                                }
+                                </p>
                         </div>
                         <div class="col-12">
                             <ul class="oneUl">

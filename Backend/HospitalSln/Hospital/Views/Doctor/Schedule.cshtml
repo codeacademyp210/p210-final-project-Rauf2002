@@ -1,10 +1,11 @@
-﻿
+﻿@model List<Hospital.Models.Appointments>
+
 @{
     ViewBag.Title = "Schedule";
 }
 
 @section style{
-    <title>Schedule</title>
+    <title>Schedule of @Model.FirstOrDefault().Doctors.Name @Model.FirstOrDefault().Doctors.Surname </title>
     <link rel="stylesheet" href="~/Public/css/schedule/schedule.css">
 }
 
@@ -14,7 +15,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <h2 class="contactH">Doctor Schedules</h2>
+                    <h2 class="contactH">@Hospital.Resources.Resource.DoctorSchedule</h2>
                 </div>
             </div>
         </div>
@@ -25,10 +26,10 @@
         <div class="container">
             <div class="row my-5">
                 <div class="col-12">
-                    <h1 class="doctorName">Dr. Verona Didone</h1>
+                    <h1 class="doctorName">Dr. @Model.FirstOrDefault().Doctors.Name @Model.FirstOrDefault().Doctors.Surname</h1>
                 </div>
                 <div class="col-12">
-                    <a href="@Url.Action("One","Doctor")" class="profile"><i class="fas fa-stethoscope"></i> View Profile</a>
+                    <a href="@Url.Action("One","Doctor",new {Id = Model.FirstOrDefault().Doctors.Id })" class="profile"><i class="fas fa-stethoscope"></i> @Hospital.Resources.Resource.ViewProfile</a>
                 </div>
             </div>
             <div class="row">
@@ -36,17 +37,18 @@
                     <table class="table">
                         <thead class="thead-dark">
                             <tr>
-                                <th scope="col">Patient</th>
-                                <th scope="col">Time</th>
-                                <th scope="col">Patient Number</th>
+                                <th scope="col">@Hospital.Resources.Resource.PatientName</th>
+                                <th scope="col">@Hospital.Resources.Resource.Date</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@@mdo</td>
-                            </tr>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.Name</td>
+                                    <td>@item.Time</td>
+                                </tr>
+                            }
                         </tbody>
                     </table>
                 </div>

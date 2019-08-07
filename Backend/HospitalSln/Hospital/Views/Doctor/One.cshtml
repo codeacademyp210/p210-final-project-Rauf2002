@@ -5,7 +5,7 @@
 }
 
 @section style{
-    <title>One</title>
+    <title>@Model.Name @Model.Surname</title>
     <link href="~/Public/css/doctors/one.css" rel="stylesheet" />
     }
 
@@ -16,7 +16,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <h2 class="contactH">Doctors</h2>
+                    <h2 class="contactH">@Hospital.Resources.Resource.Doctors</h2>
                 </div>
             </div>
         </div>
@@ -37,11 +37,27 @@
                             <h1 class="oneH">Dr. @Model.Name @Model.Surname</h1>
                         </div>
                         <div class="col-12">
-                            <small class="doctorSpec">@Model.Departments.NameEng</small>
+                            <small class="doctorSpec">
+                                @if (ViewBag.cult == "en")
+                                {
+                                    @Model.Departments.NameEng
+                                }
+                                else if (ViewBag.cult == "az")
+                                {
+                                    @Model.Departments.NameAz
+                                }
+                            </small>
                         </div>
                         <div class="col-12 my-3">
                             <p style="color:#555555">
-                                @Model.DesEng
+                                @if (ViewBag.cult == "en")
+                                {
+                                    @Model.Departments.DesEng
+                                }
+                                else if (ViewBag.cult == "az")
+                                {
+                                    @Model.Departments.DesAz
+                                }
                             </p>
                         </div>
                         <div class="col-12">

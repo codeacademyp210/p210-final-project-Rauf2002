@@ -27,18 +27,13 @@ namespace Hospital.Models
     
         public virtual DbSet<Admin> Admin { get; set; }
         public virtual DbSet<Allergies> Allergies { get; set; }
-        public virtual DbSet<AllergiesVaccines> AllergiesVaccines { get; set; }
         public virtual DbSet<Appointments> Appointments { get; set; }
         public virtual DbSet<Departments> Departments { get; set; }
         public virtual DbSet<Doctors> Doctors { get; set; }
         public virtual DbSet<Gallery> Gallery { get; set; }
-        public virtual DbSet<Inspections> Inspections { get; set; }
         public virtual DbSet<Messages> Messages { get; set; }
         public virtual DbSet<Nurses> Nurses { get; set; }
         public virtual DbSet<Patients> Patients { get; set; }
-        public virtual DbSet<PatientsAllergies> PatientsAllergies { get; set; }
-        public virtual DbSet<PatientsDoctors> PatientsDoctors { get; set; }
-        public virtual DbSet<PatientsVaccines> PatientsVaccines { get; set; }
         public virtual DbSet<Settings> Settings { get; set; }
         public virtual DbSet<Vaccines> Vaccines { get; set; }
     }

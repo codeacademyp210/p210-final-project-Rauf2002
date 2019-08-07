@@ -5,7 +5,7 @@
 }
 
 @section style{
-    <title>Gallery</title>
+    <title>@Hospital.Resources.Resource.Gallery</title>
     <link href="~/Public/css/gallery/gallery.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/Public/js/swipebox/src/css/swipebox.css">
 }
@@ -17,7 +17,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <h2 class="contactH">Gallery</h2>
+                    <h2 class="contactH">@Hospital.Resources.Resource.Gallery</h2>
                 </div>
             </div>
         </div>
@@ -44,7 +44,16 @@
 
                                 </div>
                                 <div class="col-12 mt-3">
-                                    <h3 class="cardH">@gallery.NameEng</h3>
+                                    <h3 class="cardH">
+                                        @if (ViewBag.cult == "en")
+                                        {
+                                            @gallery.NameEng
+                                        }
+                                        else if (ViewBag.cult == "az")
+                                        {
+                                            @gallery.NameAz
+                                        }
+                                    </h3>
                                 </div>
                             </div>
                         </div>

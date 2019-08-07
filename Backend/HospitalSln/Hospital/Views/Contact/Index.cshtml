@@ -1,10 +1,11 @@
-﻿
+﻿@model Hospital.Models.ViewModelHome
+
 @{
     ViewBag.Title = "Index";
 }
 
 @section style{
-    <title>Contact</title>
+    <title>@Hospital.Resources.Resource.Contact</title>
     <link href="~/Public/css/contact/contact.css" rel="stylesheet" />
 }
 
@@ -15,7 +16,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <h2 class="contactH">Contact</h2>
+                    <h2 class="contactH">@Hospital.Resources.Resource.Contact</h2>
                 </div>
             </div>
         </div>
@@ -46,7 +47,7 @@
                     <div class="row">
                         <div class="col-12">
                             <h2 class="touchH">
-                                Get in touch
+                                @Hospital.Resources.Resource.GetInTouch
                             </h2>
                         </div>
                         <div class="col-12">
@@ -69,8 +70,8 @@
                         </div>
                         <div class="col-12 contactDetails">
                             <ul>
-                                <li><i class="fas fa-envelope"></i> Hospital@Hospital.com</li>
-                                <li><i class="fas fa-phone"></i> +333 444 55 66</li>
+                                <li><i class="fas fa-envelope"></i> @Model.Setting.Email</li>
+                                <li><i class="fas fa-phone"></i> @Model.Setting.Phone</li>
                             </ul>
                         </div>
                     </div>
@@ -81,30 +82,30 @@
                         @Html.AntiForgeryToken()
                         <div class="col-12">
                             <div class="form-group">
-                                <label for="name">Full Name</label>
+                                <label for="name">@Hospital.Resources.Resource.FullName</label>
                                 <input type="text" class="form-control" id="name" placeholder="Name" name="Name">
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="form-group">
-                                <label for="email">Email address</label>
+                                <label for="email">@Hospital.Resources.Resource.EmailAddress</label>
                                 <input type="email" class="form-control" id="email" placeholder="Email" name="Email">
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="form-group">
-                                <label for="phone">Phone number</label>
+                                <label for="phone">@Hospital.Resources.Resource.PhoneNumber</label>
                                 <input type="text" class="form-control" id="phone" placeholder="Phone" name="Phone">
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="form-group">
-                                <label for="message">Message</label>
+                                <label for="message">@Hospital.Resources.Resource.Message</label>
                                 <textarea name="Message" id="message"></textarea>
                             </div>
                         </div>
                         <div class="col-12">
-                            <button type="submit" class="submit">SUBMIT</button>
+                            <button type="submit" class="submit">@Hospital.Resources.Resource.Submit</button>
                         </div>
                     </form>
                     <!-- User Message Ends -->

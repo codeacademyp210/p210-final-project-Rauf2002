@@ -23,7 +23,6 @@ namespace Hospital.Controllers
             model.Departments = db.Departments.ToList();
             model.Doctors = db.Doctors.ToList();
             model.Galleries = db.Gallery.ToList();
-            model.Inspections = db.Inspections.ToList();
             model.Messages = db.Messages.ToList();
             model.Nurses = db.Nurses.ToList();
             model.Patients = db.Patients.ToList();

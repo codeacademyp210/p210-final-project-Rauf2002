@@ -134,10 +134,10 @@
     <Compile Include="Areas\Admin\Controllers\DepartmentController.cs" />
     <Compile Include="Areas\Admin\Controllers\DoctorController.cs" />
     <Compile Include="Areas\Admin\Controllers\GalleryController.cs" />
-    <Compile Include="Areas\Admin\Controllers\InspectionController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
     <Compile Include="Areas\Admin\Controllers\MessageController.cs" />
     <Compile Include="Areas\Admin\Controllers\NurseController.cs" />
+    <Compile Include="Areas\Admin\Controllers\PatientController.cs" />
     <Compile Include="Areas\Admin\Controllers\SettingController.cs" />
     <Compile Include="Areas\Admin\Controllers\VaccineController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
@@ -155,9 +155,6 @@
     <Compile Include="Models\Allergies.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\AllergiesVaccines.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\Appointments.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -168,9 +165,6 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Gallery.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Inspections.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Messages.cs">
@@ -195,15 +189,6 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Patients.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\PatientsAllergies.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\PatientsDoctors.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\PatientsVaccines.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Settings.cs">
@@ -326,6 +311,11 @@
     <Content Include="Areas\Admin\Views\Inspection\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Inspection\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Inspection\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Vaccine\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Vaccine\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Patient\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Patient\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Patient\Index.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -358,6 +348,7 @@
     <Content Include="Views\Gallery\Index.cshtml" />
     <Content Include="Views\Contact\Index.cshtml" />
     <Content Include="Views\Doctor\Speciality.cshtml" />
+    <Content Include="Views\Doctor\NoAppointment.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

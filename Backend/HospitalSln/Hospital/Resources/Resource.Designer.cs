@@ -97,6 +97,15 @@ namespace Hospital.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Date.
+        /// </summary>
+        public static string Date {
+            get {
+                return ResourceManager.GetString("Date", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to DEPARTMENTS.
         /// </summary>
         public static string Departments {
@@ -115,6 +124,24 @@ namespace Hospital.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Doctor Schedule.
+        /// </summary>
+        public static string DoctorSchedule {
+            get {
+                return ResourceManager.GetString("DoctorSchedule", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email Address.
+        /// </summary>
+        public static string EmailAddress {
+            get {
+                return ResourceManager.GetString("EmailAddress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Fast as Lightning.
         /// </summary>
         public static string Fast {
@@ -124,11 +151,38 @@ namespace Hospital.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Full Name.
+        /// </summary>
+        public static string FullName {
+            get {
+                return ResourceManager.GetString("FullName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to GALLERY.
         /// </summary>
         public static string Gallery {
             get {
                 return ResourceManager.GetString("Gallery", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Get in touch.
+        /// </summary>
+        public static string GetInTouch {
+            get {
+                return ResourceManager.GetString("GetInTouch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Home.
+        /// </summary>
+        public static string Home {
+            get {
+                return ResourceManager.GetString("Home", resourceCulture);
             }
         }
         
@@ -147,6 +201,24 @@ namespace Hospital.Resources {
         public static string LatestPosts {
             get {
                 return ResourceManager.GetString("LatestPosts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Message.
+        /// </summary>
+        public static string Message {
+            get {
+                return ResourceManager.GetString("Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This Doctor Has No Appointment.
+        /// </summary>
+        public static string NoAppointment {
+            get {
+                return ResourceManager.GetString("NoAppointment", resourceCulture);
             }
         }
         
@@ -183,6 +255,42 @@ namespace Hospital.Resources {
         public static string PatientName {
             get {
                 return ResourceManager.GetString("PatientName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This is the subtitle for the heading.
+        /// </summary>
+        public static string ph1 {
+            get {
+                return ResourceManager.GetString("ph1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Patients have an important role to play at each stage of their care and the five safety tips will serve to encourage them to be more involved in their health care..
+        /// </summary>
+        public static string ph2 {
+            get {
+                return ResourceManager.GetString("ph2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Patients can do a lot of small things to make their health-care experience as safe as possible..
+        /// </summary>
+        public static string ph3 {
+            get {
+                return ResourceManager.GetString("ph3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hospitals are places of recovery and healing but there are also safety risks for patients, such as infections, falls and medication errors that can happen despite our best efforts..
+        /// </summary>
+        public static string ph4 {
+            get {
+                return ResourceManager.GetString("ph4", resourceCulture);
             }
         }
         
@@ -273,6 +381,30 @@ namespace Hospital.Resources {
         public static string Testimonials {
             get {
                 return ResourceManager.GetString("Testimonials", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to View Profile.
+        /// </summary>
+        public static string ViewProfile {
+            get {
+                return ResourceManager.GetString("ViewProfile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Have you tried Wheaties? They’re whole wheat with all of the bran.
+        ///                        Won’t
+        ///                        you try Wheaties? For wheat is the best food of man. They’re crispy and crunchy the whole
+        ///                        year
+        ///                        through, The kiddies never tire of them and neither will you. So just try Wheaties, the
+        ///                        best
+        ///                        breakfast food in the land!.
+        /// </summary>
+        public static string Wheaties {
+            get {
+                return ResourceManager.GetString("Wheaties", resourceCulture);
             }
         }
         

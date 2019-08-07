@@ -18,7 +18,6 @@ namespace Hospital.Models
         public List<Allergies> Allergies { get; set; }
         public List<Vaccines> Vaccines{ get; set; }
         public List<Patients> Patients { get; set; }
-        public List<Inspections> Inspections { get; set; }
 
     }
 }

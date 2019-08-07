@@ -192,4 +192,46 @@
   <data name="WhenItComes" xml:space="preserve">
     <value>Sağlamlığınızın Qayğısına Qalmağa Gəlincə</value>
   </data>
+  <data name="EmailAddress" xml:space="preserve">
+    <value>Email-iniz</value>
+  </data>
+  <data name="FullName" xml:space="preserve">
+    <value>Ad, Soyad</value>
+  </data>
+  <data name="GetInTouch" xml:space="preserve">
+    <value>Əlaqə saxlayın</value>
+  </data>
+  <data name="Message" xml:space="preserve">
+    <value>Mesaj</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>Tarix</value>
+  </data>
+  <data name="DoctorSchedule" xml:space="preserve">
+    <value>Həkimin cədvəli</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Əsas Səhifə</value>
+  </data>
+  <data name="ViewProfile" xml:space="preserve">
+    <value>Profili göstər</value>
+  </data>
+  <data name="Wheaties" xml:space="preserve">
+    <value>Heç bunu sınamışdınız? Sınamamısınzsa, indi əsl vaxtıdır.</value>
+  </data>
+  <data name="NoAppointment" xml:space="preserve">
+    <value>Bu Həkimin Heç Bir Görüşü Yoxdur</value>
+  </data>
+  <data name="ph1" xml:space="preserve">
+    <value>Bura Başlıq üçündür</value>
+  </data>
+  <data name="ph2" xml:space="preserve">
+    <value>Pasiyentlər müalicənin hər bir mərhələsində mühim rol oynayır.</value>
+  </data>
+  <data name="ph3" xml:space="preserve">
+    <value>Pasiyentlərin etdiyi kiçik şeylər onların müalicəsini mümkün qədər təhlükəsiz edə bilər.</value>
+  </data>
+  <data name="ph4" xml:space="preserve">
+    <value>Xəstəxanalar sağaltmaq üçün olsalar da, cəhdlərimizə baxmayaraq xəstələr üçün həmişə risk var. (Məs: İnfeksiya )</value>
+  </data>
 </root>

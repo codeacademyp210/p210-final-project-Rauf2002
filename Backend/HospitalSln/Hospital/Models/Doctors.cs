@@ -18,9 +18,7 @@ namespace Hospital.Models
         public Doctors()
         {
             this.Appointments = new HashSet<Appointments>();
-            this.Inspections = new HashSet<Inspections>();
             this.Nurses = new HashSet<Nurses>();
-            this.PatientsDoctors = new HashSet<PatientsDoctors>();
         }
     
         public int Id { get; set; }
@@ -39,10 +37,6 @@ namespace Hospital.Models
         public virtual ICollection<Appointments> Appointments { get; set; }
         public virtual Departments Departments { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Inspections> Inspections { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Nurses> Nurses { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PatientsDoctors> PatientsDoctors { get; set; }
     }
 }
