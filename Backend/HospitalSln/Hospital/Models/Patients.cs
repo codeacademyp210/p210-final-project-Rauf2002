@@ -11,7 +11,8 @@ namespace Hospital.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+
     public partial class Patients
     {
         public int Id { get; set; }
@@ -20,6 +21,8 @@ namespace Hospital.Models
         public string Phone { get; set; }
         public string Address { get; set; }
         public int Payment { get; set; }
+
+        [DisplayName("Inspection Date")]
         public DateTime InspectionDate { get; set; }
         public Nullable<System.DateTime> Birthday { get; set; }
 
